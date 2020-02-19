@@ -2,23 +2,35 @@
 
 ## Comandos
 
-- Lanzar la aplicación
+- Version de ruby: `2.6.3` con `bundler` instalado.
+- Version de node: `v12.14.1` con `yarn` instalado.
 
-    ```bash
-    rails server
-    ```
+### Preparación
 
-- Crear canción manualmente
+```bash
+bundle install
+yarn install
+rake db:create
+rake db:migrate
+```
 
-    ```bash
-    rake app:create_song
-    ```
+### Lanzar la aplicación
+
+```bash
+rails server
+```
+
+### Crear canción manualmente
+
+```bash
+rake app:create_song
+```
   
-- Volver a migrar desde cero
+### Volver a migrar desde cero
     
-    ```bash
-    rake db:migrate:redo
-    ```
+```bash
+rake db:migrate:redo
+```
 
 ## Guías
 

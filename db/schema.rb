@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_02_19_175507) do
 
-  create_table "anuncios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "anuncios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "url"
     t.string "img_url"
     t.string "correo"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_175507) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "canciones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "canciones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "artista"
     t.string "titulo"
     t.integer "visitas", default: 0
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_175507) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "comentarios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "comentarios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.text "texto"
     t.bigint "parrafo_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -38,14 +38,14 @@ ActiveRecord::Schema.define(version: 2020_02_19_175507) do
     t.index ["parrafo_id"], name: "index_comentarios_on_parrafo_id"
   end
 
-  create_table "insultos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "insultos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "insulto"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["insulto"], name: "index_insultos_on_insulto", unique: true
   end
 
-  create_table "parrafos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "parrafos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.text "texto"
     t.bigint "cancion_id", null: false
     t.datetime "created_at", precision: 6, null: false
