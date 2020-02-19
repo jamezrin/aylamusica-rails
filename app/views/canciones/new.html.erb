@@ -16,12 +16,10 @@
     <%= form.file_field :imagen %>
   </p>
 
-  <%= form.fields_for :parrafos do |parrafos_form| %>
-    <p>
-      <%= parrafos_form.label :texto %><br>
-      <%= parrafos_form.text_area :texto %>
-    </p>
-  <% end %>
+  <p>
+    <%= form.label :letra %><br>
+    <%= form.text_area :letra %>
+  </p>
 
   <p>
     <%= form.submit class: 'btn btn-primary' %>
