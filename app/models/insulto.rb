@@ -1,0 +1,2 @@
+class Insulto < ApplicationRecord
+end

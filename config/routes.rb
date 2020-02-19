@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   #get 'principal/index'
 
-
-
   resources :canciones do
     resources :parrafos do
       resources :comentarios

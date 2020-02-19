@@ -29,6 +29,18 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
+sl:
   hello: "Hello world"
-  new_song: "New song"
+  new_song: "Nova pesem"
+  activerecord:
+    models:
+      cancion:
+        one: "Pesem"
+        other: "Pesmi"
+  helpers:
+    label:
+      cancion:
+        titulo: "Naslov"
+        artista: "Umetnik"
+        imagen: "Slika"
+

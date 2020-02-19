@@ -29,6 +29,6 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
+da:
   hello: "Hello world"
-  new_song: "New song"
+  new_song: "DA: Nueva cancion"

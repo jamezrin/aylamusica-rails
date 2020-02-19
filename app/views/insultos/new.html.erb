@@ -1,0 +1,22 @@
+<h1><%= t('new_insult') %></h1>
+<%= form_with scope: :insulto, url: insultos_path, local: true do |form| %>
+  <p>
+    <%= form.label :url %><br>
+    <%= form.text_field :url %>
+  </p>
+
+  <p>
+    <%= form.label :imagen %><br>
+    <%= form.file_field :imagen %>
+  </p>
+
+
+  <p>
+    <%= form.label :correo %><br>
+    <%= form.text_field :correo %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

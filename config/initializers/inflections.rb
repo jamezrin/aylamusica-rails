@@ -14,3 +14,11 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections(:es) do |inflect|
+  inflect.irregular 'cancion', 'canciones'
+end
+
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.irregular 'cancion', 'canciones'
+end

@@ -1,0 +1,21 @@
+<h1><%= t('new_song') %></h1>
+<%= form_with scope: :cancion, url: canciones_path, local: true do |form| %>
+  <p>
+    <%= form.label :titulo %><br>
+    <%= form.text_field :titulo %>
+  </p>
+
+  <p>
+    <%= form.label :artista %><br>
+    <%= form.text_area :artista %>
+  </p>
+
+  <p>
+    <%= form.label :imagen %><br>
+    <%= form.file_field :imagen %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

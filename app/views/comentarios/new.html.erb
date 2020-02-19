@@ -1,0 +1,11 @@
+<h1><%= t('new_comment') %></h1>
+<%= form_with scope: :comentario, url: cancion_parrafo_comentarios_path, local: true do |form| %>
+  <p>
+    <%= form.label :texto %><br>
+    <%= form.text_area :texto %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
