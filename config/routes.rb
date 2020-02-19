@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  #get 'principal/index'
+  # get 'principal/index'
+  get 'admin/index'
+  get 'login/index'
 
   resources :canciones do
     resources :parrafos do
@@ -13,5 +15,5 @@ Rails.application.routes.draw do
   root 'principal#index'
 
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routi ng.html
 end

@@ -1,2 +1,16 @@
 <h1>Principal#index</h1>
-<p>Find me in app/views/principal/index.html.erb</p>
+
+<ul>
+<% @canciones.each do |cancion| %>
+  <li>
+    <div>Titulo <%= cancion.titulo %></div>
+    <div>Artista <%= cancion.artista %></div>
+    <ul>
+      <% cancion.parrafos.each do |parrafo| %>
+        <li style="white-space: pre-line"><%= parrafo.texto %></li>
+      <% end %>
+    </ul>
+
+  </li>
+<% end %>
+</ul>

@@ -1,5 +1,6 @@
 <h1><%= t('new_song') %></h1>
-<%= form_with scope: :cancion, url: canciones_path, local: true do |form| %>
+<%# form_with(scope: :cancion, url: canciones_path, local: true) do |form| %>
+<%= form_for(@cancion, local: true) do |form| %>
   <p>
     <%= form.label :titulo %><br>
     <%= form.text_field :titulo %>
@@ -7,13 +8,20 @@
 
   <p>
     <%= form.label :artista %><br>
-    <%= form.text_area :artista %>
+    <%= form.text_field :artista %>
   </p>
 
   <p>
     <%= form.label :imagen %><br>
     <%= form.file_field :imagen %>
   </p>
+
+  <%= form.fields_for :parrafos do |parrafos_form| %>
+    <p>
+      <%= parrafos_form.label :texto %><br>
+      <%= parrafos_form.text_area :texto %>
+    </p>
+  <% end %>
 
   <p>
     <%= form.submit class: 'btn btn-primary' %>

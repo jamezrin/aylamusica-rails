@@ -2,7 +2,7 @@
 <%= form_with scope: :anuncio, url: anuncios_path, local: true do |form| %>
   <p>
     <%= form.label :url %><br>
-    <%= form.text_field :url %>
+    <%= form.url_field :url %>
   </p>
 
   <p>
@@ -12,7 +12,7 @@
 
   <p>
     <%= form.label :correo %><br>
-    <%= form.text_field :correo %>
+    <%= form.email_field :correo %>
   </p>
 
   <p>
