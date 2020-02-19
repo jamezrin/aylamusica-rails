@@ -52,5 +52,6 @@ rake db:migrate:redo
 - Crear la página principal igual que el dibujo
 - Crear configuración y página de login
     - https://www.justinweiss.com/articles/how-rails-sessions-work/
+    - https://medium.com/@kristenfletcherwilde/saving-retrieving-data-with-a-yaml-file-in-ruby-the-basics-e45232903d94
     - https://guides.rubyonrails.org/security.html
 - ...
