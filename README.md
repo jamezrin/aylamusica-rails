@@ -1,24 +1,13 @@
-# README
+# Aylamusica
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Lanzar la aplicación
 
-Things you may want to cover:
+    ```bash
+    rails server
+    ```
 
-* Ruby version
+- Crear canción manualmente
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    ```bash
+    rake about app:create_song
+    ```

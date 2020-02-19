@@ -2,6 +2,8 @@
 
 one:
   texto: MyText
+  parrafo: one
 
 two:
   texto: MyText
+  parrafo: two

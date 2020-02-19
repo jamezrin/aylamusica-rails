@@ -2,6 +2,8 @@
 
 one:
   texto: MyText
+  cancion: one
 
 two:
   texto: MyText
+  cancion: two
