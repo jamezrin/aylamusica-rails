@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'readline'
 
 namespace :app do
@@ -16,6 +18,7 @@ namespace :app do
     parrafos_escritos = 0
     lineas.split("\n\n").each do |parrafo|
       next if parrafo.empty?
+
       parrafos_escritos += 1
       song.parrafos.create({ texto: parrafo })
     end
