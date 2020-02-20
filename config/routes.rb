@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   # get 'principal/index'
-  get 'admin', to: 'principal#admin'
   get 'salir', to: 'principal#salir'
+  match 'admin', to: 'principal#admin', :via => [:get, :post]
+  match 'buscar', to: 'principal#buscar', :via => :post
 
   resources :canciones do
     resources :parrafos do

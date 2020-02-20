@@ -30,6 +30,5 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 dk:
-  principal: "Hjemmeside"
-  hello: "Hello world"
-  new_song: "DA: Nueva cancion"
+  titulo_buscar_cancion: "Søg let efter en sang"
+  titulo_canciones_populares: "dk"

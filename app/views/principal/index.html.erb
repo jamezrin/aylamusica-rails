@@ -1,32 +1,49 @@
-<h1><%= t('principal') %></h1>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-lg-2">
-      <div>
-        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      </div>
+<div class="row m-0">
+  <div class="col-12 col-lg-1 pl-0">
+    <div>
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
     </div>
-    <div class="col-12 col-lg">
-      <ul>
-        <% @canciones.each do |cancion| %>
-          <li>
-            <div>Titulo <%= cancion.titulo %></div>
-            <div>Artista <%= cancion.artista %></div>
-            <ul>
-              <% cancion.parrafos.each do |parrafo| %>
-                <li style="white-space: pre-line"><%= parrafo.texto %></li>
-              <% end %>
-            </ul>
+  </div>
+  <div class="col-12 col-lg mt-4">
+    <div class="container justify-content-center text-center">
+      <div>
+        <h1><%= t("titulo_buscar_cancion") %></h1>
 
-          </li>
+        <div>
+        <%= form_tag buscar_path do %>
+          <%= text_field_tag :busqueda %>
+          <%= submit_tag %>
         <% end %>
-      </ul>
-    </div>
-    <div class="col-12 col-lg-2">
-      <div>
-        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+        </div>
       </div>
+
+      <img src="<%= asset_url("undraw_compose_music_ovo2.svg") %>" class="w-50 mt-5">
+
+      <div class="mt-5">
+        <h2><%= t('titulo_canciones_populares') %></h2>
+
+        <div class="d-flex flex-row justify-content-center">
+        <% @canciones.each do |cancion| %>
+          <div class="bg-light m-2" style="width: 10em; height: 10em">
+            <div><%= cancion.titulo %></div>
+            <div><%= cancion.artista %></div>
+            <div>Visitas: <%= cancion.visitas %></div>
+            <div>Parrafos: <%= cancion.parrafos.count %></div>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-1 pr-0">
+    <div>
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
     </div>
   </div>
 </div>

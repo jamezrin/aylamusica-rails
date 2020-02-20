@@ -16,6 +16,11 @@ class CancionesController < ApplicationController
     render plain: params[:cancion].inspect
   end
 
+  def show
+    @cancion = Cancion.new cancion_params
+
+  end
+
   private
 
   def cancion_params

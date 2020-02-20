@@ -30,18 +30,5 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 si:
-  principal: "Domača stran"
-  hello: "Hello world"
-  new_song: "Nova pesem"
-  activerecord:
-    models:
-      cancion:
-        one: "Pesem"
-        other: "Pesmi"
-  helpers:
-    label:
-      cancion:
-        titulo: "Naslov"
-        artista: "Umetnik"
-        imagen: "Slika"
-
+  titulo_buscar_cancion: "Poiščite skladbo enostavno"
+  titulo_canciones_populares: "si"

@@ -43,9 +43,12 @@ rake db:migrate:redo
 - [tipos de datos en modelos](https://api.rubyonrails.org/v6.0.2.1/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-add_column)
 - [multiples modelos en formularios](https://stackoverflow.com/questions/32884412/how-to-handle-multiple-models-in-one-rails-form)
 - [sesiones en rails](https://guides.rubyonrails.org/security.html)
+- [selects en rails](https://guides.rubyonrails.org/form_helpers.html#select-boxes-for-dealing-with-model-objects)
+
+### Otros enlaces
+- https://apidock.com/rails/ActiveRecord/QueryMethods/order
 
 ## Próximas tareas
-- Preservar locale en los parametros de enlaces
 - Continuar con la implementación de bootstrap
 - Implementar la imagen de las canciones
   - https://guides.rubyonrails.org/active_storage_overview.html
@@ -55,3 +58,7 @@ rake db:migrate:redo
     - https://medium.com/@kristenfletcherwilde/saving-retrieving-data-with-a-yaml-file-in-ruby-the-basics-e45232903d94
     - https://guides.rubyonrails.org/security.html
 - ...
+
+## Notas
+
+- Color de ilustraciones `#3BD4C1`
