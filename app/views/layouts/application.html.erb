@@ -13,11 +13,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="min-vh-100">
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
+    <main role="main" class="min-vh-100">
       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
   </body>

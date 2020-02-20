@@ -57,6 +57,8 @@ rake db:migrate:redo
     - https://www.justinweiss.com/articles/how-rails-sessions-work/
     - https://medium.com/@kristenfletcherwilde/saving-retrieving-data-with-a-yaml-file-in-ruby-the-basics-e45232903d94
     - https://guides.rubyonrails.org/security.html
+- Renombrar acciones de los recursos
+    - https://stackoverflow.com/questions/46340218/renaming-specific-path-on-resource-route
 - ...
 
 ## Notas
