@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # get 'principal/index'
-  get 'admin/index'
-  get 'login/index'
+  get 'admin', to: 'principal#admin'
+  get 'salir', to: 'principal#salir'
 
   resources :canciones do
     resources :parrafos do

@@ -45,7 +45,7 @@ rake db:migrate:redo
 - [sesiones en rails](https://guides.rubyonrails.org/security.html)
 
 ## Próximas tareas
-
+- Preservar locale en los parametros de enlaces
 - Continuar con la implementación de bootstrap
 - Implementar la imagen de las canciones
   - https://guides.rubyonrails.org/active_storage_overview.html
