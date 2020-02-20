@@ -16,10 +16,25 @@ namespace :app do
     lineas.split("\n\n").each do |parrafo|
       next if parrafo.empty?
 
-      cancion.parrafos.create({ texto: parrafo })
+      cancion.parrafos.create({ texto: parrafo, posicion: parrafos_escritos })
       puts "Escrito párrafo #{parrafos_escritos += 1}: #{parrafo}"
     end
 
     puts "Se han escrito #{parrafos_escritos} párrafos a la canción #{titulo}"
+  end
+
+  desc 'Actualizar las posiciones de los párrafos'
+  task update_songs: :environment do
+    canciones = Cancion.all.includes(:parrafos)
+
+    canciones.each do |cancion|
+      puts "Actualizando #{cancion.artista} - #{cancion.titulo}"
+      cancion.parrafos.each_with_index do |parrafo, indice|
+        parrafo.posicion = indice + 1
+        parrafo.save
+      end
+    end
+
+    puts "Se han actualizado los párrafos #{canciones.count} canciones"
   end
 end
