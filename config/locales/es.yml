@@ -30,5 +30,6 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
+  principal: "Página principal"
   hello: "Hello world"
   new_song: "Nueva cancion"

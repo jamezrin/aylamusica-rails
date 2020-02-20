@@ -9,15 +9,17 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="flag-icon flag-icon-es"></span>
-          Idioma
+          <span class="flag-icon flag-icon-<%= I18n.locale.to_s %>"></span>
+          <%= I18n.locale.to_s.upcase! %>
         </a>
 
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+        <% I18n.available_locales.reject { |u| u == I18n.locale }.each do |other_locale| %>
+            <%= link_to request.parameters.merge({ :locale =>  other_locale }), :class => "dropdown-item" do %>
+              <span class="flag-icon flag-icon-<%= other_locale.to_s %>"></span>
+              <%= other_locale.to_s.upcase! %>
+            <% end %>
+        <% end %>
         </div>
       </li>
     </ul>

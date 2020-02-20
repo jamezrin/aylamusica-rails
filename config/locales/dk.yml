@@ -29,6 +29,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-da:
+dk:
+  principal: "Hjemmeside"
   hello: "Hello world"
   new_song: "DA: Nueva cancion"

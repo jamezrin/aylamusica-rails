@@ -17,6 +17,6 @@ module Aylamusica
     # the framework and any gems in your application.
     config.i18n.default_locale = :es
 
-    config.i18n.available_locales = [:es, :da, :sl]
+    config.i18n.available_locales = [:es, :dk, :si]
   end
 end
