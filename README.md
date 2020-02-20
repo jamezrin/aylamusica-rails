@@ -49,16 +49,18 @@ rake db:migrate:redo
 - https://apidock.com/rails/ActiveRecord/QueryMethods/order
 
 ## Próximas tareas
-- Continuar con la implementación de bootstrap
-- Implementar la imagen de las canciones
+- [ ] Continuar con la implementación de bootstrap
+- [x] Implementar la imagen de las canciones
   - https://guides.rubyonrails.org/active_storage_overview.html
-- Crear la página principal igual que el dibujo
-- Crear configuración y página de login
+- [ ] Crear la página principal igual que el dibujo
+- [ ] Crear configuración y página de login
     - https://www.justinweiss.com/articles/how-rails-sessions-work/
     - https://medium.com/@kristenfletcherwilde/saving-retrieving-data-with-a-yaml-file-in-ruby-the-basics-e45232903d94
     - https://guides.rubyonrails.org/security.html
-- Renombrar acciones de los recursos
+- [ ] Renombrar acciones de los recursos
     - https://stackoverflow.com/questions/46340218/renaming-specific-path-on-resource-route
+- [ ] Tratar los párrafos como radio buttons y usarlos en el formulario lateral
+    - https://stackoverflow.com/questions/32935435/use-div-as-radio-button
 - ...
 
 ## Notas
