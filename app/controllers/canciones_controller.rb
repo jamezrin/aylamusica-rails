@@ -24,6 +24,6 @@ class CancionesController < ApplicationController
   private
 
   def cancion_params
-    params.require(:cancion).permit(:titulo, :artista, :letra)
+    params.require(:cancion).permit(:titulo, :artista, :imagen, :letra)
   end
 end
