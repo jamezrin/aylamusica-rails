@@ -2,9 +2,6 @@
   <div class="col-12 col-lg-1 px-0">
     <div>
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
     </div>
   </div>
   <div class="col-12 col-lg mt-4">
@@ -27,22 +24,25 @@
 
         <div class="d-flex flex-row justify-content-center">
         <% @canciones.each do |cancion| %>
-          <div class="bg-light m-2" style="width: 10em; height: 10em">
-            <div><%= cancion.titulo %></div>
-            <div><%= cancion.artista %></div>
-            <div>Visitas: <%= cancion.visitas %></div>
-            <div>Parrafos: <%= cancion.parrafos.count %></div>
-          </div>
+          <a href="<%= cancion_path(cancion) %>">
+            <div class="bg-light p-2 m-2" style="">
+
+              <img src="<%= cancion.imagen.attached? ? url_for(cancion.imagen) : asset_url("music_note_disk_icon.png") %>" style="width: 10em; height: 10em"  alt="Imagen de la canción">
+
+
+              <div><%= cancion.titulo %></div>
+              <div><%= cancion.artista %></div>
+              <div>Visitas: <%= cancion.visitas %></div>
+              <div>Parrafos: <%= cancion.parrafos.count %></div>
+            </div>
+          </a>
         <% end %>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-12 col-lg-1 px-0">
+  <div class="col-12 col-lg-1 px-0 d-none d-lg-flex">
     <div>
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
     </div>
   </div>
