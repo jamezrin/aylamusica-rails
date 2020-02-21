@@ -1,5 +1,5 @@
-<h1><%= t('new_ad') %></h1>
-<%= form_with scope: :anuncio, url: anuncios_path, local: true do |form| %>
+<h1><%= t('nuevo_anuncio') %></h1>
+<%= form_for(@anuncio, local: true) do |form| %>
   <p>
     <%= form.label :url %><br>
     <%= form.url_field :url %>
@@ -13,6 +13,11 @@
   <p>
     <%= form.label :correo %><br>
     <%= form.email_field :correo %>
+  </p>
+
+  <p>
+    <%= form.label :posicion %>
+    <%= form.number_field :posicion %>
   </p>
 
   <p>

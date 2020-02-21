@@ -10,7 +10,7 @@ class PrincipalController < ApplicationController
       @contrasena = params.permit(:contrasena)
       if @contrasena == ALM_CONFIG['contrasena_admin']
         # login correcto
-        session[:timestamp] = Time.now
+        session[:auth_timestamp] = Time.now
         redirect_to admin_path
       else
         # login incorrecto
@@ -18,7 +18,7 @@ class PrincipalController < ApplicationController
       end
 
     else
-      if session[:timestamp]
+      if session[:auth_timestamp]
         # sesión iniciada
         render 'principal/admin'
       else
@@ -29,7 +29,7 @@ class PrincipalController < ApplicationController
   end
 
   def salir
-    reset_session if session[:timestamp]
+    reset_session if session[:auth_timestamp]
     redirect_to root_path
   end
 

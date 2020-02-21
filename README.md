@@ -47,9 +47,10 @@ rake db:migrate:redo
 
 ### Otros enlaces
 - https://apidock.com/rails/ActiveRecord/QueryMethods/order
+- https://prathamesh.tech/2019/08/26/understanding-webpacker-in-rails-6/
 
 ## Próximas tareas
-- [ ] Continuar con la implementación de bootstrap
+- [x] Continuar con la implementación de bootstrap
 - [x] Implementar la imagen de las canciones
   - https://guides.rubyonrails.org/active_storage_overview.html
 - [ ] Crear la página principal igual que el dibujo
@@ -61,6 +62,7 @@ rake db:migrate:redo
     - https://stackoverflow.com/questions/46340218/renaming-specific-path-on-resource-route
 - [ ] Tratar los párrafos como radio buttons y usarlos en el formulario lateral
     - https://stackoverflow.com/questions/32935435/use-div-as-radio-button
+- [ ] Hacer que las canciones sean `card` de bootstrap
 - ...
 
 ## Notas

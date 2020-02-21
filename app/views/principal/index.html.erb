@@ -1,6 +1,9 @@
-<div class="row m-0">
+<div class="row m-0 bg-white">
   <div class="col-12 col-lg-1 px-0">
     <div>
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
     </div>
   </div>
@@ -22,27 +25,32 @@
       <div class="mt-5">
         <h2><%= t('titulo_canciones_populares') %></h2>
 
-        <div class="d-flex flex-row justify-content-center">
+        <ul class="list-unstyled d-flex flex-row justify-content-center flex-wrap">
         <% @canciones.each do |cancion| %>
-          <a href="<%= cancion_path(cancion) %>">
-            <div class="bg-light p-2 m-2" style="">
+            <li class="">
+              <a href="<%= cancion_path(cancion) %>">
+                <div class="p-3 m-3 bg-light shadow-sm rounded-lg">
 
-              <img src="<%= cancion.imagen.attached? ? url_for(cancion.imagen) : asset_url("music_note_disk_icon.png") %>" style="width: 10em; height: 10em"  alt="Imagen de la canción">
+                  <img src="<%= cancion.imagen.attached? ? url_for(cancion.imagen) : asset_url("music_note_disk_icon.png") %>" style="width: 10em; height: 10em"  alt="Imagen de la canción">
 
 
-              <div><%= cancion.titulo %></div>
-              <div><%= cancion.artista %></div>
-              <div>Visitas: <%= cancion.visitas %></div>
-              <div>Parrafos: <%= cancion.parrafos.count %></div>
-            </div>
-          </a>
+                  <div><%= cancion.titulo %></div>
+                  <div><%= cancion.artista %></div>
+                  <div>Visitas: <%= cancion.visitas %></div>
+                  <div>Parrafos: <%= cancion.parrafos.count %></div>
+                </div>
+              </a>
+            </li>
         <% end %>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
   <div class="col-12 col-lg-1 px-0 d-none d-lg-flex">
     <div>
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
     </div>
   </div>

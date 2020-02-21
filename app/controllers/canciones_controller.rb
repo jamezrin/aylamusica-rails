@@ -20,6 +20,13 @@ class CancionesController < ApplicationController
 
   def show
     @cancion = Cancion.find_by_id(params[:id])
+
+    # salvo que haya recargado la página, añadir una visita
+    unless session[:previous_request_url] == session[:current_request_url]
+      @cancion.visitas += 1
+    end
+
+    @cancion.save
   end
 
   private
