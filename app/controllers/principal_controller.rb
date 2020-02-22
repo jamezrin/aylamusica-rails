@@ -7,13 +7,14 @@ class PrincipalController < ApplicationController
 
   def admin
     if request.post?
-      @contrasena = params.permit(:contrasena)
+      @contrasena = params[:contrasena]
       if @contrasena == ALM_CONFIG['contrasena_admin']
         # login correcto
         session[:auth_timestamp] = Time.now
         redirect_to admin_path
       else
         # login incorrecto
+        flash[:alert] = t('contrasena_incorrecta')
         redirect_to admin_path
       end
 
@@ -29,13 +30,18 @@ class PrincipalController < ApplicationController
   end
 
   def salir
-    reset_session if session[:auth_timestamp]
-    redirect_to root_path
+    if session[:auth_timestamp]
+      reset_session
+      flash[:notice] = t('sesion_cerrada')
+      redirect_to admin_path
+    else
+      redirect_to root_path
+    end
   end
 
   def buscar
     @canciones = Cancion.where("artista LIKE :param_artista OR titulo LIKE :param_titulo",
-       {:param_artista => "%#{params[:busqueda]}%", :param_titulo => "%#{params[:busqueda]}%"})
+       {:param_artista => "%#{params[:q]}%", :param_titulo => "%#{params[:q]}%"})
     render json: @canciones
   end
 end

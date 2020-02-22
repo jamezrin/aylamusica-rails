@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   around_action :switch_locale
-  after_action :hook_urls
+  before_action :hook_urls
 
   def switch_locale(&action)
     locale = params[:locale] || I18n.default_locale

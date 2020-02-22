@@ -24,3 +24,8 @@
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+.bg-light-dark {
+    background-color: #f5f7fb !important;
+}
+

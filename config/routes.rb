@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # get 'principal/index'
   get 'salir', to: 'principal#salir'
   match 'admin', to: 'principal#admin', :via => [:get, :post]
-  match 'buscar', to: 'principal#buscar', :via => :post
+  match 'buscar', to: 'principal#buscar', :via => :get
 
   resources :canciones do
     resources :parrafos do
@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   resources :anuncios
 
   root 'principal#index'
-
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routi ng.html
 end

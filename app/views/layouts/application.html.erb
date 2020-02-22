@@ -5,19 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <title><%= content_for?(:title) ? yield(:title) : "Aylamusica" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Aylamusica" %>">
+    <title><%= content_for?(:head_title) ? yield(:head_title) : "Aylamusica" %></title>
+    <meta name="description" content="<%= content_for?(:head_desc) ? yield(:head_desc) : "Aylamusica" %>">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="min-vh-100">
+  <body>
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main" class="min-vh-100">
+    <main role="main">
       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
   </body>

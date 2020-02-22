@@ -1,2 +1,9 @@
 <h1>Admin</h1>
 
+<% content_for :navbar_extra do %>
+  <li class="nav-item">
+    <%= link_to t('cerrar_sesion'), salir_url, class: 'btn btn-danger mr-3', role: 'button' %>
+  </li>
+<% end %>
+
+asdas

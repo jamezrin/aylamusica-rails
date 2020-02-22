@@ -1,5 +1,6 @@
 <div>Titulo <%= @cancion.titulo %></div>
 <div>Artista <%= @cancion.artista %></div>
+<div>Visitas <%= @cancion.visitas %></div>
 <ul>
   <% @cancion.parrafos.each do |parrafo| %>
     <li style="white-space: pre-line"><%= parrafo.texto %></li>

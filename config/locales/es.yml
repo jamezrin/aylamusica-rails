@@ -30,6 +30,13 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 es:
+  acciones:
+    cerrar: "Cerrar"
+    buscar: "Buscar"
   titulo_buscar_cancion: "Busca una canción fácilmente"
   titulo_canciones_populares: "Las canciones mas populares"
+  iniciar_sesion: "Iniciar sesión"
+  contrasena_incorrecta: "La contraseña que has introducido no es correcta"
+  sesion_cerrada: "Se ha cerrado tu sesión correctamente"
+  cerrar_sesion: "Cerrar sesión"
 
