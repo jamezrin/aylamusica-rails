@@ -39,4 +39,6 @@ es:
   contrasena_incorrecta: "La contraseña que has introducido no es correcta"
   sesion_cerrada: "Se ha cerrado tu sesión correctamente"
   cerrar_sesion: "Cerrar sesión"
+  visitas_cancion: "%{visitas} visitas"
+  nota_iniciar_sesion: "Todas sus acciones serán registradas y monitorizadas"
 

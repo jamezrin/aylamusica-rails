@@ -1,4 +1,6 @@
 class PrincipalController < ApplicationController
+  before_action :auth_required, only: [:salir]
+
   def index
     @canciones = Cancion
        .order(:visitas => :desc)
@@ -30,13 +32,9 @@ class PrincipalController < ApplicationController
   end
 
   def salir
-    if session[:auth_timestamp]
-      reset_session
-      flash[:notice] = t('sesion_cerrada')
-      redirect_to admin_path
-    else
-      redirect_to root_path
-    end
+    reset_session
+    flash[:notice] = t('sesion_cerrada')
+    redirect_to admin_path
   end
 
   def buscar

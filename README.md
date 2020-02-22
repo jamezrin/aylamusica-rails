@@ -65,6 +65,12 @@ rake db:migrate:redo
 - [ ] Hacer que las canciones sean `card` de bootstrap
 - ...
 
+## Accesibilidad
+
+- Todas las imágenes tienen que tener un `alt`
+- Los headers tienen que estar en orden (h1, h2, h3...)
+
+
 ## Notas
 
 - Color de ilustraciones `#3BD4C1`

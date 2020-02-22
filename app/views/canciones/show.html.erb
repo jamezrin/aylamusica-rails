@@ -1,8 +1,50 @@
-<div>Titulo <%= @cancion.titulo %></div>
-<div>Artista <%= @cancion.artista %></div>
-<div>Visitas <%= @cancion.visitas %></div>
-<ul>
-  <% @cancion.parrafos.each do |parrafo| %>
-    <li style="white-space: pre-line"><%= parrafo.texto %></li>
-  <% end %>
-</ul>
+<div class="row no-gutters bg-light-dark">
+  <div class="col-12 col-lg-1">
+    <div>
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100 d-none d-lg-block">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100 d-none d-lg-block">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100 d-none d-lg-block">
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-10 mt-5">
+    <div class="container">
+      <%= form_with do |f| %>
+
+      <% end %>
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <h1><%= @cancion.titulo %></h1>
+          <h2><%= @cancion.artista %></h2>
+          <div>
+            <i class="fa fa-eye"></i>
+            <%= t 'visitas_cancion', visitas: @cancion.visitas %>
+          </div>
+          <ul>
+            <% @cancion.parrafos.each_with_index do |parrafo, index| %>
+              <li class="parrafo">
+                <input type="radio" name="parrafo" id="parrafo-<%= index %>" value="<%= index %>" class="d-none">
+                <label for="parrafo-<%= index %>" style="white-space: pre-line; " class="my-3"><%= parrafo.texto %></label>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 mt-5">
+          <div style="background: red; height: 18rem; width: 100%; position: sticky; top: 8rem;"></div>
+        </div>
+      </div>
+    </div>
+    <!--split(/\W+/)-->
+
+  </div>
+  <div class="col-12 col-lg-1 px-0 d-none d-lg-flex">
+    <div>
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100 d-none d-lg-block">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100 d-none d-lg-block">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100 d-none d-lg-block">
+    </div>
+  </div>
+</div>

@@ -1,4 +1,6 @@
 class CancionesController < ApplicationController
+  before_action :auth_required, only: [:new, :create]
+
   def new
     @cancion = Cancion.new
   end
@@ -15,11 +17,11 @@ class CancionesController < ApplicationController
       @cancion.parrafos.create({ texto: parrafo, posicion: parrafos_escritos })
     end
 
-    render plain: params[:cancion].inspect
+    redirect_to cancion_url(@cancion)
   end
 
   def show
-    @cancion = Cancion.find_by_id(params[:id])
+    @cancion = Cancion.find_by_id!(params[:id])
 
     # salvo que haya recargado la página, añadir una visita
     unless session[:previous_request_url] == session[:current_request_url]

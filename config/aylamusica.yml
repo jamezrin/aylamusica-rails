@@ -1,3 +1,7 @@
 ---
 mostrar_canciones_populares: 8
 contrasena_admin: "superpass"
+minutos_innaccion: 5
+modo_mantenimiento: false
+caracter_censura: '*'
+

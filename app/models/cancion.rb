@@ -1,5 +1,5 @@
 class Cancion < ApplicationRecord
-  has_many :parrafos
+  has_many :parrafos, :dependent => :destroy
 
   has_one_attached :imagen
 
