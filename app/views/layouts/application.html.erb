@@ -14,10 +14,11 @@
   </head>
 
   <body>
+    <a href="#main-content" class="skip"><%= t 'saltar_al_contenido' %></a>
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
+    <main role="main" id="main-content">
       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
   </body>

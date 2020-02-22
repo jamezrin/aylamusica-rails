@@ -69,7 +69,8 @@ rake db:migrate:redo
 
 - Todas las imágenes tienen que tener un `alt`
 - Los headers tienen que estar en orden (h1, h2, h3...)
-
+- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Main_role
+- https://www.bignerdranch.com/blog/web-accessibility-skip-navigation-links/
 
 ## Notas
 

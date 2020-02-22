@@ -29,3 +29,26 @@
     background-color: #f5f7fb !important;
 }
 
+/* https://www.bignerdranch.com/blog/web-accessibility-skip-navigation-links/ */
+a.skip {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 1px;
+    width: 1px;
+    text-align: left;
+    overflow: hidden;
+    z-index: 100;
+}
+
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    padding: 1rem;
+    background-color: #fff;
+}
