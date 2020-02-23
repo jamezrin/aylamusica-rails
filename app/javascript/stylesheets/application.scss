@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+
+// https://blog.capsens.eu/how-to-write-javascript-in-rails-6-webpacker-yarn-and-sprockets-cdf990387463
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+
+@import "~bootstrap";
+
+.no-drag-select {
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.bg-light-dark {
+  background-color: #f5f7fb !important;
+}
+
+// https://www.bignerdranch.com/blog/web-accessibility-skip-navigation-links/
+a.skip {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  height: 1px;
+  width: 1px;
+  text-align: left;
+  overflow: hidden;
+  z-index: 100;
+}
+
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.parrafo {
+  list-style-type: none;
+
+  transition: transform ease-in-out 0.075s;
+
+  &:hover {
+    transform: scale(1.025);
+  }
+
+  label {
+    padding: 1em;
+    background-color: white;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  input:checked ~ label {
+    background-color: rgba(59, 212, 193, 0.25);
+  }
+}
+
+.cancion-popular {
+  transition: transform ease-in-out 0.125s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:hover &__imagen {
+    filter: none;
+  }
+
+  &__imagen {
+    &, &-defecto {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    border-radius: 100% !important;
+    filter: grayscale(1);
+  }
+}

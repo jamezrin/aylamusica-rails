@@ -49,6 +49,8 @@ rake db:migrate:redo
 ### Otros enlaces
 - https://apidock.com/rails/ActiveRecord/QueryMethods/order
 - https://prathamesh.tech/2019/08/26/understanding-webpacker-in-rails-6/
+- `IMPORTANTE` https://gilesbowkett.com/posts/2019/05/06/webpacker.html
+- https://rossta.net/blog/from-sprockets-to-webpack.html
 
 ## Próximas tareas
 - [x] Continuar con la implementación de bootstrap

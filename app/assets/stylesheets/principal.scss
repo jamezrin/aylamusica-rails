@@ -1,25 +1,3 @@
 // Place all the styles related to the Principal controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
-.cancion-popular {
-  transition: transform ease-in-out 0.125s;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  &:hover &__imagen {
-    filter: none;
-  }
-
-  &__imagen {
-    &, &-defecto {
-      width: 10rem;
-      height: 10rem;
-    }
-
-    border-radius: 100% !important;
-    filter: grayscale(1);
-  }
-}
