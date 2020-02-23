@@ -33,6 +33,8 @@ es:
   acciones:
     cerrar: "Cerrar"
     buscar: "Buscar"
+    crear_comentario: "Crear comentario"
+    ver_comentarios: "Ver comentarios"
   titulo_buscar_cancion: "Busca una canción fácilmente"
   titulo_canciones_populares: "Las canciones mas populares"
   iniciar_sesion: "Iniciar sesión"
@@ -43,4 +45,6 @@ es:
   visitas_cancion: "%{visitas} visitas"
   nota_iniciar_sesion: "Todas sus acciones serán registradas y monitorizadas"
   saltar_al_contenido: "Saltar al contenido"
+  comentarios: "Comentarios"
+  comentario_creado: "Comentario creado correctamente"
 

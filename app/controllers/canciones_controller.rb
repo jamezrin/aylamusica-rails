@@ -1,5 +1,6 @@
 class CancionesController < ApplicationController
   before_action :auth_required, only: [:new, :create]
+  skip_before_action :hook_urls, only: [:comentar]
 
   def new
     @cancion = Cancion.new
@@ -29,6 +30,16 @@ class CancionesController < ApplicationController
     end
 
     @cancion.save
+  end
+
+  def comentar
+    @cancion = Cancion.find_by_id!(params[:cancion_id])
+    @parrafo = @cancion.parrafos.find_by!(posicion: params[:parrafo_pos])
+    @parrafo.comentarios.create({ texto: params[:texto] })
+
+    flash[:notice] = t('comentario_creado')
+
+    redirect_to cancion_url(@cancion, parrafo_pos: @parrafo.posicion)
   end
 
   private

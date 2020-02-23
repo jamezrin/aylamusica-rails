@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   around_action :switch_locale
   before_action :hook_urls
-  before_action :auth_expire
+  before_action :auth_action_update
   helper_method :logged_in?
 
   def switch_locale(&action)
@@ -24,17 +24,23 @@ class ApplicationController < ActionController::Base
 
   def auth_required
     render :file => "public/422.html", :status => :unauthorized, :layout => false unless logged_in?
-  end
 
-  def auth_expire
-    return unless logged_in?
-
-    if session[:auth_last_action_time].present? &&
-        session[:auth_last_action_time].to_time + ALM_CONFIG['segundos_inaccion'].seconds < Time.current
+    if auth_session_expired?
       reset_session
       flash[:alert] = t('sesion_expirada')
-      redirect_to admin_path
-    else
+      redirect_to admin_url
+    end
+  end
+
+  def auth_session_expired?
+    last_action = session[:auth_last_action_time]
+    timeout_seconds = ALM_CONFIG['segundos_inaccion'].seconds
+    last_action.present? &&
+        last_action.to_time + timeout_seconds < Time.current
+  end
+
+  def auth_action_update
+    if logged_in? && !auth_session_expired?
       session[:auth_last_action_time] = Time.current
     end
   end
