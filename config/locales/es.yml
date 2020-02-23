@@ -49,4 +49,7 @@ es:
   titulo_crear_comentario: "Dí algo"
   comentario_creado: "Comentario enviado correctamente"
   ningun_comentario: "Nadie ha comentado todavía. ¡Sé el primero en hacerlo!"
-
+  resultados_busqueda: "Resultados de tu búsqueda \"%{busqueda}\""
+  todas_las_canciones: "Todas las canciones"
+  ninguna_cancion: "Ningún resultado"
+  buscar_todas: "Dejar este campo vacío para ver todas"

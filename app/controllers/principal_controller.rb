@@ -39,8 +39,11 @@ class PrincipalController < ApplicationController
   end
 
   def buscar
-    @canciones = Cancion.where("artista LIKE :param_artista OR titulo LIKE :param_titulo",
-       {:param_artista => "%#{params[:q]}%", :param_titulo => "%#{params[:q]}%"})
-    render json: @canciones
+    if params[:q].empty?
+      @canciones = Cancion.all
+    else
+      @canciones = Cancion.where("artista LIKE :param_artista OR titulo LIKE :param_titulo",
+                                 {:param_artista => "%#{params[:q]}%", :param_titulo => "%#{params[:q]}%"})
+    end
   end
 end

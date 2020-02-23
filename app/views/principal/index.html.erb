@@ -14,7 +14,7 @@
 
         <%= form_with url: buscar_url, local: true, method: :get do |f| %>
           <div class="form-group">
-            <%= f.text_field :q, class: 'form-control offset-3 col-6' %>
+            <%= f.text_field :q, class: 'form-control offset-3 col-6', placeholder: t('buscar_todas') %>
           </div>
           <%= f.submit t('acciones.buscar'), name: nil, class: 'btn btn-primary' %>
         <% end %>
