@@ -39,20 +39,20 @@ class CancionesController < ApplicationController
 
     flash[:notice] = t('comentario_creado')
 
-    # TODO: utilizar cookies para no usar parametros de url
-    # al usar parametros de url la primera vez que comentas se añade una visualización
     redirect_to cancion_url(@cancion, parrafo_pos: @parrafo.posicion)
   end
 
   def comentarios
     @cancion = Cancion.find_by_id!(params[:cancion_id])
     @parrafo = @cancion.parrafos.find_by!(posicion: params[:parrafo_pos])
-    render json: @parrafo.comentarios.map { |comentario|
+    @comentarios = @parrafo.comentarios.order(:created_at => :desc)
+
+    render json: @comentarios.map do |comentario|
       {
-        texto: censurar_comentario(comentario.texto),
-        created_at: comentario.created_at
+          texto: censurar_comentario(comentario.texto),
+          created_at: comentario.created_at
       }
-    }
+    end
   end
 
   private

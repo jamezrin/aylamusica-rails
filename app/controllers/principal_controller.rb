@@ -1,5 +1,6 @@
 class PrincipalController < ApplicationController
   before_action :auth_required, only: [:salir]
+  before_action :auth_expire, only: [:admin]
 
   def index
     @canciones = Cancion

@@ -68,6 +68,9 @@ rake db:migrate:redo
 - [x] Hacer que las canciones sean `card` de bootstrap
 - [ ] Validar campos en el servidor
     - https://stackoverflow.com/questions/2823628/rails-how-to-require-at-least-one-field-not-to-be-blank 
+- [ ] Utilizar cookies para no usar parámetros de url
+    - Al usar parámetros de url la primera vez que comentas se añade una visualización, ya que cambia la URL
+    - Se puede utilizar para `parrafo_pos` y para `locale`
 - ...
 
 ## Accesibilidad

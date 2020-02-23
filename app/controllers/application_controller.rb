@@ -22,14 +22,18 @@ class ApplicationController < ActionController::Base
     session[:auth_timestamp].present?
   end
 
-  def auth_required
-    render :file => "public/422.html", :status => :unauthorized, :layout => false unless logged_in?
-
+  def auth_expire
     if auth_session_expired?
       reset_session
       flash[:alert] = t('sesion_expirada')
       redirect_to admin_url
     end
+  end
+
+  def auth_required
+    render :file => "public/422.html", :status => :unauthorized, :layout => false unless logged_in?
+
+    auth_expire
   end
 
   def auth_session_expired?
