@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
 
     match 'comentar', to: 'canciones#comentar', :via => [:post]
+    match 'comentarios', to: 'canciones#comentarios', :via => [:post]
   end
 
   resources :insultos

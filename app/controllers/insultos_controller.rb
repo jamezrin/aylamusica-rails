@@ -1,9 +1,14 @@
 class InsultosController < ApplicationController
-  def new
+  before_action :auth_required
 
+  def new
+    @insulto = Insulto.new
   end
 
   def create
-    render plain: params[:insulto].inspect
+    @insulto = Insulto.new params.require(:insulto).permit(:insulto)
+    @insulto.save
+
+    redirect_to root_path
   end
 end
