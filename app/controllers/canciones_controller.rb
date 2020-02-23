@@ -15,7 +15,7 @@ class CancionesController < ApplicationController
       next if parrafo.empty?
       parrafos_escritos += 1
 
-      @cancion.parrafos.create({ texto: parrafo, posicion: parrafos_escritos })
+      @cancion.parrafos.create({texto: parrafo, posicion: parrafos_escritos})
     end
 
     redirect_to cancion_url(@cancion)
@@ -35,7 +35,7 @@ class CancionesController < ApplicationController
   def comentar
     @cancion = Cancion.find_by_id!(params[:cancion_id])
     @parrafo = @cancion.parrafos.find_by!(posicion: params[:parrafo_pos])
-    @parrafo.comentarios.create({ texto: params[:texto] })
+    @parrafo.comentarios.create({texto: params[:texto]})
 
     flash[:notice] = t('comentario_creado')
 
@@ -47,12 +47,12 @@ class CancionesController < ApplicationController
     @parrafo = @cancion.parrafos.find_by!(posicion: params[:parrafo_pos])
     @comentarios = @parrafo.comentarios.order(:created_at => :desc)
 
-    render json: @comentarios.map do |comentario|
+    render json: @comentarios.map { |comentario|
       {
           texto: censurar_comentario(comentario.texto),
           created_at: comentario.created_at
       }
-    end
+    }
   end
 
   private
@@ -65,7 +65,7 @@ class CancionesController < ApplicationController
     caracter_censura = ALM_CONFIG["caracter_censura"]
 
     insultos = Insulto.select(:insulto).where(":texto LIKE CONCAT('%', insulto, '%')",
-         {:texto => texto }).pluck(:insulto)
+                                              {:texto => texto}).pluck(:insulto)
 
     insultos.each do |insulto|
       texto.gsub! insulto, caracter_censura * insulto.length
