@@ -23,6 +23,20 @@ class ApplicationController < ActionController::Base
 
   def auth_required
     render :file => "public/422.html", :status => :unauthorized, :layout => false unless logged_in?
-    # redirect_to root_path unless logged_in?
+
+    auth_expire
+  end
+
+  def auth_expire
+    return unless logged_in?
+
+    if session[:auth_last_action_time].present? &&
+        session[:auth_last_action_time].to_time + ALM_CONFIG['segundos_inaccion'].seconds < Time.current
+      reset_session
+      flash[:alert] = t('sesion_expirada')
+      redirect_to admin_path
+    else
+      session[:auth_last_action_time] = Time.current
+    end
   end
 end

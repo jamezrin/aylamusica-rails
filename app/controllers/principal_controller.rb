@@ -1,5 +1,6 @@
 class PrincipalController < ApplicationController
   before_action :auth_required, only: [:salir]
+  before_action :auth_expire, only: [:admin]
 
   def index
     @canciones = Cancion
@@ -21,7 +22,7 @@ class PrincipalController < ApplicationController
       end
 
     else
-      if session[:auth_timestamp]
+      if logged_in?
         # sesión iniciada
         render 'principal/admin'
       else
