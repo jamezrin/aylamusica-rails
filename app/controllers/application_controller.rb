@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def hook_urls
     session[:previous_request_url] = session[:current_request_url]
-    session[:current_request_url] = request.url
+    session[:current_request_url] = request.original_url.split('?')[0]
   end
 
   def logged_in?
