@@ -1,6 +1,6 @@
 <h1><%= t('new_song') %></h1>
 <%# form_with(scope: :cancion, url: canciones_path, local: true) do |form| %>
-<%= form_for(@cancion, local: true) do |form| %>
+<%= form_with(model: @cancion, local: true) do |form| %>
   <p>
     <%= form.label :titulo %><br>
     <%= form.text_field :titulo %>

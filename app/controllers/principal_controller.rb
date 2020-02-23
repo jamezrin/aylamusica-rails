@@ -12,7 +12,7 @@ class PrincipalController < ApplicationController
       @contrasena = params[:contrasena]
       if @contrasena == ALM_CONFIG['contrasena_admin']
         # login correcto
-        session[:auth_timestamp] = Time.now
+        session[:auth_timestamp] = Time.current
         redirect_to admin_path
       else
         # login incorrecto

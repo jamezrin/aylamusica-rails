@@ -9,6 +9,10 @@
     transform: scale(1.1);
   }
 
+  &:hover &__imagen {
+    filter: none;
+  }
+
   &__imagen {
     &, &-defecto {
       width: 10rem;
