@@ -30,8 +30,8 @@
           </div>
 
           <div class="col-12 col-lg-4 mt-5">
-            <div class="sticky-top">
-              <h3><%= t('comentarios') %></h3>
+            <div class="sticky-top pt-5">
+              <h3><%= t('titulo_comentarios') %></h3>
 
               <% if flash[:notice] %>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -44,7 +44,7 @@
 
               <div class="form-group p-3">
                 <%= f.label :texto %>
-                <%= f.text_area :texto, class: 'form-control' %>
+                <%= f.text_area :texto, class: 'form-control', required: '' %>
                 <%= f.submit t('acciones.crear_comentario'), class: 'form-control' %>
               </div>
 

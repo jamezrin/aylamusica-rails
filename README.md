@@ -4,6 +4,7 @@
 
 - Version de ruby: `2.6.3` con `bundler` instalado.
 - Version de node: `v12.14.1` con `yarn` instalado.
+- La gema `foreman` instalada (`gem install foreman`)
 
 ### Preparación
 
@@ -17,7 +18,7 @@ rake db:migrate
 ### Lanzar la aplicación
 
 ```bash
-rails server
+foreman start
 ```
 
 ### Crear canción manualmente
@@ -53,16 +54,18 @@ rake db:migrate:redo
 - [x] Continuar con la implementación de bootstrap
 - [x] Implementar la imagen de las canciones
   - https://guides.rubyonrails.org/active_storage_overview.html
-- [ ] Crear la página principal igual que el dibujo
-- [ ] Crear configuración y página de login
+- [x] Crear la página principal igual que el dibujo
+- [x] Crear configuración y página de login
     - https://www.justinweiss.com/articles/how-rails-sessions-work/
     - https://medium.com/@kristenfletcherwilde/saving-retrieving-data-with-a-yaml-file-in-ruby-the-basics-e45232903d94
     - https://guides.rubyonrails.org/security.html
 - [ ] Renombrar acciones de los recursos
     - https://stackoverflow.com/questions/46340218/renaming-specific-path-on-resource-route
-- [ ] Tratar los párrafos como radio buttons y usarlos en el formulario lateral
+- [x] Tratar los párrafos como radio buttons y usarlos en el formulario lateral
     - https://stackoverflow.com/questions/32935435/use-div-as-radio-button
-- [ ] Hacer que las canciones sean `card` de bootstrap
+- [x] Hacer que las canciones sean `card` de bootstrap
+- [ ] Validar campos en el servidor
+    - https://stackoverflow.com/questions/2823628/rails-how-to-require-at-least-one-field-not-to-be-blank 
 - ...
 
 ## Accesibilidad
