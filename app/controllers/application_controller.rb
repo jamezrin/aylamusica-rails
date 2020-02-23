@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   around_action :switch_locale
   before_action :hook_urls
+  before_action :auth_expire
   helper_method :logged_in?
 
   def switch_locale(&action)
@@ -23,8 +24,6 @@ class ApplicationController < ActionController::Base
 
   def auth_required
     render :file => "public/422.html", :status => :unauthorized, :layout => false unless logged_in?
-
-    auth_expire
   end
 
   def auth_expire
