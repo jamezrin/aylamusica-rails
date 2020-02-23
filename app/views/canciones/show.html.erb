@@ -1,18 +1,18 @@
 <div class="row no-gutters bg-light-dark">
-  <div class="col-12 col-lg-1">
-    <div>
+  <div class="col-12 col-lg-1 bg-dark">
+    <aside role="none">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100 d-none d-lg-block">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100 d-none d-lg-block">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100 d-none d-lg-block">
-    </div>
+    </aside>
   </div>
 
   <div class="col-12 col-lg-10 mt-5">
     <div class="container">
       <%= form_with(url: cancion_comentar_url(@cancion), local: true) do |f| %>
         <div class="row">
-          <div class="col-12 col-lg-8">
+          <div class="col-12 col-xl-8">
             <h1><%= @cancion.titulo %></h1>
             <h2><%= @cancion.artista %></h2>
             <p>
@@ -29,7 +29,7 @@
             </ul>
           </div>
 
-          <div class="col-12 col-lg-4 mt-5">
+          <div class="col-12 col-xl-4 mt-5">
             <div class="sticky-top pt-5">
               <h3><%= t('titulo_comentarios') %></h3>
 
@@ -67,14 +67,12 @@
     <!--split(/\W+/)-->
 
   </div>
-  <div class="col-12 col-lg-1 px-0 d-none d-lg-flex">
-    <div>
+  <div class="col-12 col-lg-1 bg-dark">
+    <aside role="none">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100 d-none d-lg-block">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100 d-none d-lg-block">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100 d-none d-lg-block">
-    </div>
+    </aside>
   </div>
 </div>
-
-<%= javascript_pack_tag 'canciones', 'data-turbolinks-track': 'reload' %>

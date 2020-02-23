@@ -4,7 +4,7 @@
 
 - Version de ruby: `2.6.3` con `bundler` instalado.
 - Version de node: `v12.14.1` con `yarn` instalado.
-- La gema `foreman` instalada (`gem install foreman`)
+- Overmind o Foreman instalados, para ejecutar el `Procfile`
 
 ### Preparación
 
@@ -18,7 +18,7 @@ rake db:migrate
 ### Lanzar la aplicación
 
 ```bash
-foreman start
+overmind start
 ```
 
 ### Crear canción manualmente
