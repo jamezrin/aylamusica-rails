@@ -35,7 +35,7 @@
               <% @cancion.parrafos.each do |parrafo| %>
                 <li class="parrafo my-3">
                   <input type="radio" name="parrafo_pos" id="parrafo-<%= parrafo.posicion %>" value="<%= parrafo.posicion %>" class="d-none" required <%= "checked" if params[:parrafo_pos] == parrafo.posicion.to_s %>>
-                  <label for="parrafo-<%= parrafo.posicion %>" style="white-space: pre-line; "><%= parrafo.texto %></label>
+                  <label for="parrafo-<%= parrafo.posicion %>"><%= parrafo.texto %></label>
                 </li>
               <% end %>
             </ul>
