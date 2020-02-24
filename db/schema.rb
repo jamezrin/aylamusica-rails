@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_02_21_124850) do
     t.integer "visitas", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "posicion"
+    t.integer "posicion", default: 0
   end
 
   create_table "canciones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 2020_02_21_124850) do
     t.string "insulto"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["insulto"], name: "index_insultos_on_insulto", unique: true
   end
 
   create_table "parrafos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|

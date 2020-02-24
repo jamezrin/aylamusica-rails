@@ -37,4 +37,20 @@ namespace :app do
 
     puts "Se han actualizado los párrafos #{canciones.count} canciones"
   end
+
+  # https://raw.githubusercontent.com/Somelx/Insultos/master/diccionario.txt
+  desc 'Cargar insultos interactivamente'
+  task load_insults: :environment do
+    puts 'Introduce insultos, uno por linea'; lineas = STDIN.read
+    abort 'No se ha proporcionado nada por stdin' if lineas.empty?
+    puts 'Espere...'
+
+    insultos_escritos = 0
+    lineas.split("\n").each do |insulto|
+      insultos_escritos += 1
+      Insulto.create({insulto: insulto})
+    end
+
+    puts "Se han cargado #{insultos_escritos} insultos"
+  end
 end
