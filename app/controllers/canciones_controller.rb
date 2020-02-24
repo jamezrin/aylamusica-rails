@@ -64,8 +64,8 @@ class CancionesController < ApplicationController
   def censurar_comentario(texto)
     caracter_censura = ALM_CONFIG["caracter_censura"]
 
-    insultos = Insulto.select(:insulto).where("LOWER(:texto) LIKE CONCAT('%', LOWER(insulto), '%')",
-                                              {:texto => texto}).pluck(:insulto)
+    insultos = Insulto.where("LOWER(:texto) LIKE CONCAT('%', LOWER(insulto), '%')",
+                             {:texto => texto}).order("LENGTH(insulto) DESC").pluck(:insulto)
 
     insultos.each do |insulto|
       texto.gsub! /#{insulto}/i, caracter_censura * insulto.length
