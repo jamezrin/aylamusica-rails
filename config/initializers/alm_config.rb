@@ -3,7 +3,7 @@ def alm_config_path
 end
 
 def load_alm_config
-  @alm_config_obj = YAML.load_file(alm_config_path)
+  YAML.load_file(alm_config_path)
 end
 
 def save_alm_config

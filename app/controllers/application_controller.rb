@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   around_action :switch_locale
   before_action :hook_urls
   before_action :auth_action_update
+  before_action :force_maintenance
   helper_method :logged_in?
 
   def switch_locale(&action)
@@ -47,5 +48,10 @@ class ApplicationController < ActionController::Base
     if logged_in? && !auth_session_expired?
       session[:auth_last_action_time] = Time.current
     end
+  end
+
+  def force_maintenance
+    session[:auth_last_action_time] = Time.current # para que las sesiones no expiren
+    render :file => "public/503.html", :status => :service_unavailable, :layout => false if ALM_CONFIG["mantenimiento"]
   end
 end
