@@ -47,6 +47,7 @@ namespace :app do
 
     insultos_escritos = 0
     lineas.split("\n").each do |insulto|
+      next if insulto.empty?
       insultos_escritos += 1
       Insulto.create({insulto: insulto})
     end
