@@ -1,11 +1,14 @@
-<h1><%= t('new_insult') %></h1>
-<%= form_with model: @insulto, local: true do |form| %>
-  <p>
-    <%= form.label :insulto %><br>
-    <%= form.text_field :insulto %>
-  </p>
+<div class="container mt-5">
+  <h1>
+    <%= t('nuevo_insulto') %>
+  </h1>
 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+  <%= form_with model: @insulto, local: true do |form| %>
+    <p class="form-group form-inline">
+      <%= form.label :insulto %><br>
+      <%= form.text_field :insulto, class: 'form-control ml-4' %>
+    </p>
+
+    <%= form.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>

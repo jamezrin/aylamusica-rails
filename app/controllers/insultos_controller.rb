@@ -9,6 +9,6 @@ class InsultosController < ApplicationController
     @insulto = Insulto.new params.require(:insulto).permit(:insulto)
     @insulto.save
 
-    redirect_to root_path
+    redirect_to admin_path
   end
 end

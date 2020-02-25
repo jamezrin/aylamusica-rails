@@ -1,26 +1,29 @@
-<h1><%= t('nuevo_anuncio') %></h1>
-<%= form_for(@anuncio, local: true) do |form| %>
-  <p>
-    <%= form.label :url %><br>
-    <%= form.url_field :url %>
-  </p>
+<div class="container mt-5">
+  <h1>
+    <%= t('nuevo_anuncio') %>
+  </h1>
 
-  <p>
-    <%= form.label :imagen %><br>
-    <%= form.file_field :imagen %>
-  </p>
+  <%= form_with(model: @anuncio, local: true) do |form| %>
+    <p class="form-group">
+      <%= form.label :url %><br>
+      <%= form.url_field :url, class: 'form-control' %>
+    </p>
 
-  <p>
-    <%= form.label :correo %><br>
-    <%= form.email_field :correo %>
-  </p>
+    <p class="form-group">
+      <%= form.label :imagen %><br>
+      <%= form.file_field :imagen, class: 'form-control-file' %>
+    </p>
 
-  <p>
-    <%= form.label :posicion %>
-    <%= form.number_field :posicion %>
-  </p>
+    <p class="form-group">
+      <%= form.label :correo %><br>
+      <%= form.email_field :correo, class: 'form-control' %>
+    </p>
 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+    <p class="form-group">
+      <%= form.label :posicion %>
+      <%= form.number_field :posicion, class: 'form-control' %>
+    </p>
+
+    <%= form.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>

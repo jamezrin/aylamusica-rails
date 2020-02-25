@@ -40,16 +40,13 @@ function updateParrafos(parrafos, posicion) {
 }
 
 $(document).on('turbolinks:load', function() {
-   const camposParrafos = $('.cancion .parrafo input');
    const cacheParrafos = [];
 
-   camposParrafos.on('change', function(event) {
+   $('.cancion .parrafo input').on('change', function(event) {
       updateParrafos(cacheParrafos, event.target.value)
    });
 
-   camposParrafos.each(function() {
-      if (this.checked) {
-         updateParrafos(cacheParrafos, this.value);
-      }
+   $('.cancion .parrafo input:checked').each(function() {
+      updateParrafos(cacheParrafos, this.value);
    });
 });

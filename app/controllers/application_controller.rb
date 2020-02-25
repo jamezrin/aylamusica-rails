@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
     last_action = session[:auth_last_action_time]
     timeout_seconds = ALM_CONFIG['segundos_inaccion'].seconds
     last_action.present? &&
-        last_action.to_time + timeout_seconds < Time.current
+        Time.current.to_time - last_action.to_time > timeout_seconds
   end
 
   def auth_action_update
