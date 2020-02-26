@@ -3,6 +3,8 @@ class AnunciosController < ApplicationController
 
   def new
     @anuncio = Anuncio.new
+    @ultima_posicion = Anuncio.maximum(:posicion) || -1
+    @anuncio.posicion = @ultima_posicion + 1
   end
 
   def create

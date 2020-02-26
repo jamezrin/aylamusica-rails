@@ -5,9 +5,9 @@
         <% if anuncio.imagen.attached? && anuncio.posicion % 2 == 0 %>
           <%= link_to anuncio.url, target: '_blank' do %>
             <% if index == 0 %>
-              <%= image_tag anuncio.imagen, class: 'w-100' %>
+              <%= image_tag anuncio.imagen, class: 'no-drag-select w-100' %>
             <% else %>
-              <%= image_tag anuncio.imagen, class: 'w-100 d-none d-lg-block' %>
+              <%= image_tag anuncio.imagen, class: 'no-drag-select w-100 d-none d-lg-block' %>
             <% end %>
           <% end %>
         <% end %>
@@ -23,9 +23,9 @@
         <% if anuncio.imagen.attached? && anuncio.posicion % 2 != 0 %>
           <%= link_to anuncio.url, target: '_blank' do %>
             <% if index == 0 %>
-              <%= image_tag anuncio.imagen, class: 'w-100' %>
+              <%= image_tag anuncio.imagen, class: 'no-drag-select w-100' %>
             <% else %>
-              <%= image_tag anuncio.imagen, class: 'w-100 d-none d-lg-block' %>
+              <%= image_tag anuncio.imagen, class: 'no-drag-select w-100 d-none d-lg-block' %>
             <% end %>
           <% end %>
         <% end %>
