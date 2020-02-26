@@ -55,7 +55,12 @@ class ApplicationController < ActionController::Base
   end
 
   def force_maintenance
-    if ALM_CONFIG["mantenimiento"] && !logged_in?
+    if logged_in?
+      # para que las sesiones no expiren
+      session[:auth_last_action_time] = Time.current
+    end
+
+    if ALM_CONFIG["mantenimiento"]
       render :file => "public/503.html",
              :status => :service_unavailable,
              :layout => false
