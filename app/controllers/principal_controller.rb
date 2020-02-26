@@ -7,6 +7,7 @@ class PrincipalController < ApplicationController
     @canciones = Cancion
        .order(:visitas => :desc)
        .limit(ALM_CONFIG['mostrar_canciones_populares'])
+    @anuncios = Anuncio.all
   end
 
   def admin

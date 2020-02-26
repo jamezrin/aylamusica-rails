@@ -8,6 +8,10 @@ class AnunciosController < ApplicationController
   def create
     @anuncio = Anuncio.new anuncio_params
     @anuncio.save
+
+    flash[:notice] = t('anuncio_creado')
+
+    redirect_back fallback_location: admin_path
   end
 
   private

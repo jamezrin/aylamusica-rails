@@ -1,0 +1,35 @@
+<div class="row no-gutters bg-light-dark">
+  <div class="col-12 col-lg-1">
+    <div class="contenedor-anuncios">
+      <% @anuncios.each_with_index do |anuncio, index| %>
+        <% if anuncio.imagen.attached? && index % 2 == 0 %>
+          <%= link_to anuncio.url do %>
+            <% if index == 0 %>
+              <%= image_tag anuncio.imagen, class: 'w-100', target: '_blank' %>
+            <% else %>
+              <%= image_tag anuncio.imagen, class: 'w-100 d-none d-lg-block', target: '_blank' %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-12 col-lg mt-5">
+    <%= yield %>
+  </div>
+  <div class="col-12 col-lg-1">
+    <div class="contenedor-anuncios">
+      <% @anuncios.each_with_index do |anuncio, index| %>
+        <% if anuncio.imagen.attached? && index % 2 != 0 %>
+          <%= link_to anuncio.url do %>
+            <% if index == 0 %>
+              <%= image_tag anuncio.imagen, class: 'w-100', target: '_blank' %>
+            <% else %>
+              <%= image_tag anuncio.imagen, class: 'w-100 d-none d-lg-block', target: '_blank' %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

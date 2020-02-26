@@ -1,10 +1,17 @@
 <div class="row no-gutters bg-light-dark">
   <div class="col-12 col-lg-1">
-    <div>
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+    <div class="contenedor-anuncios">
+      <% @anuncios.each_with_index do |anuncio, index| %>
+         <% if anuncio.imagen.attached? && index % 2 == 0 %>
+          <%= link_to anuncio.url do %>
+            <% if index == 0 %>
+              <%= image_tag anuncio.imagen, class: 'w-100', target: '_blank' %>
+            <% else %>
+              <%= image_tag anuncio.imagen, class: 'w-100 d-none d-lg-block', target: '_blank' %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <div class="col-12 col-lg mt-5">
@@ -47,12 +54,19 @@
       </div>
     </div>
   </div>
-  <div class="col-12 col-lg-1 px-0 d-none d-lg-flex">
-    <div>
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
+  <div class="col-12 col-lg-1">
+    <div class="contenedor-anuncios">
+      <% @anuncios.each_with_index do |anuncio, index| %>
+        <% if anuncio.imagen.attached? && index % 2 != 0 %>
+          <%= link_to anuncio.url do %>
+            <% if index == 0 %>
+              <%= image_tag anuncio.imagen, class: 'w-100', target: '_blank' %>
+            <% else %>
+              <%= image_tag anuncio.imagen, class: 'w-100 d-none d-lg-block', target: '_blank' %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
