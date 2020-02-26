@@ -44,11 +44,11 @@ function updateParrafos(parrafos, posicion) {
 $(document).on('turbolinks:load', function() {
    const cacheParrafos = [];
 
-   $('.cancion form .parrafo input').on('change', function(event) {
+   $('#ver-cancion form .parrafo input').on('change', function(event) {
       updateParrafos(cacheParrafos, event.target.value)
    });
 
-   $('.cancion form .parrafo input:checked').each(function() {
+   $('#ver-cancion form .parrafo input:checked').each(function() {
       updateParrafos(cacheParrafos, this.value);
    });
 });

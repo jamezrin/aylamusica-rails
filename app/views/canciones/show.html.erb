@@ -1,17 +1,16 @@
 <%= render "partials/publicidad" do %>
-  <div class="container cancion">
+  <div class="container mt-5" id="ver-cancion">
     <%= form_with(url: cancion_accion_url(@cancion), local: true) do |f| %>
       <div class="row">
         <div class="col-12 col-xl-8">
-          <div class="row">
-            <div class="col-3">
-              <% if @cancion.imagen.attached? %>
-                <%= image_tag @cancion.imagen, class: 'no-drag-select w-100' %>
-              <% else %>
-                <%= image_tag 'music_note_disk_icon.png', class: 'no-drag-select w-100' %>
-              <% end %>
-            </div>
-            <div class="col">
+          <div class="d-flex flex-row">
+            <%= image_tag @cancion.imagen.attached? ?
+                              @cancion.imagen :
+                              'music_note_disk_icon.png',
+                          class: 'no-drag-select',
+                          style: 'max-height: 10rem;' %>
+
+            <div class="p-3">
               <h1><%= @cancion.titulo %></h1>
               <h2><%= @cancion.artista %></h2>
               <p>
@@ -19,6 +18,7 @@
                 <%= t 'visitas_cancion', visitas: @cancion.visitas %>
               </p>
             </div>
+
           </div>
 
           <ul class="list-unstyled pl-0">

@@ -45,9 +45,8 @@ a.skip:hover {
   background-color: #fff;
 }
 
-.parrafo {
+#ver-cancion .parrafo {
   list-style-type: none;
-
   transition: transform ease-in-out 0.075s;
 
   &:hover {
@@ -72,9 +71,17 @@ a.skip:hover {
   input:checked ~ label {
     background-color: rgba(59, 212, 193, 0.25);
   }
+
+  #lista-comentarios {
+    max-height: 30rem;
+
+    li.list-group-item {
+      word-wrap: break-word;
+    }
+  }
 }
 
-.cancion-popular {
+#ver-principal .cancion-popular {
   transition: transform ease-in-out 0.125s;
 
   &:hover {
@@ -93,13 +100,5 @@ a.skip:hover {
 
     border-radius: 100% !important;
     filter: grayscale(1);
-  }
-}
-
-#lista-comentarios {
-  max-height: 30rem;
-
-  li.list-group-item {
-    word-wrap: break-word;
   }
 }

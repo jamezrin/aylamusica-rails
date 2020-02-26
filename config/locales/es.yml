@@ -13,7 +13,8 @@ es:
   iniciar_sesion: Iniciar sesión
   insulto_creado: Insulto creado correctamente
   ningun_comentario: De momento nadie ha comentado en este párrafo. ¡Sé el primero en hacerlo!
-  ninguna_cancion: Ningún resultado
+  ningun_resultado_cancion: Ningún resultado
+  ninguna_cancion: No se han encontrado canciones en nuestra base de datos
   ninguna_seleccion: Haz click en un párrafo para ver los comentarios
   nota_iniciar_sesion: Todas sus acciones serán registradas y monitorizadas
   nueva_cancion: Nueva canción

@@ -11,7 +11,7 @@ class InsultosController < ApplicationController
 
     flash[:notice] = t('insulto_creado')
 
-    redirect_to admin_path
+    redirect_to admin_url
   end
 
   private

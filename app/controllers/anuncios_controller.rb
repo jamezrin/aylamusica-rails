@@ -13,7 +13,7 @@ class AnunciosController < ApplicationController
 
     flash[:notice] = t('anuncio_creado')
 
-    redirect_back fallback_location: admin_path
+    redirect_back fallback_location: admin_url
   end
 
   private
