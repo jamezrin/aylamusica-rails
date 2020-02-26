@@ -1,6 +1,6 @@
 function fetchParrafo(posicion, callback) {
    $.ajax({
-      url: window.location.pathname + '/comentarios',
+      url: window.location.pathname + '/comentarios_json',
       type: 'POST',
       data: { parrafo_pos: posicion },
       success: callback

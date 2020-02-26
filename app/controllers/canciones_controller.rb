@@ -32,17 +32,7 @@ class CancionesController < ApplicationController
     @cancion.save
   end
 
-  def comentar
-    @cancion = Cancion.find_by_id!(params[:cancion_id])
-    @parrafo = @cancion.parrafos.find_by!(posicion: params[:parrafo_pos])
-    @parrafo.comentarios.create({texto: params[:texto]})
-
-    flash[:notice] = t('comentario_creado')
-
-    redirect_to cancion_url(@cancion, parrafo_pos: @parrafo.posicion)
-  end
-
-  def comentarios
+  def comentarios_json
     @cancion = Cancion.find_by_id!(params[:cancion_id])
     @parrafo = @cancion.parrafos.find_by!(posicion: params[:parrafo_pos])
     @comentarios = @parrafo.comentarios.order(:created_at => :desc)
@@ -55,7 +45,38 @@ class CancionesController < ApplicationController
     }
   end
 
+  def accion
+    if params[:commit] == t('acciones.ver_comentarios')
+      comentarios
+    elsif params[:commit] == t('acciones.crear_comentario')
+      comentar
+    end
+  end
+
   private
+
+  def comentarios
+    @cancion = Cancion.find_by_id!(params[:cancion_id])
+    @parrafo = @cancion.parrafos.find_by!(posicion: params[:parrafo_pos])
+    @comentarios = @parrafo.comentarios.order(:created_at => :desc).map { |comentario|
+      {
+          texto: censurar_comentario(comentario.texto),
+          created_at: comentario.created_at
+      }
+    }
+
+    render "comentarios/index"
+  end
+
+  def comentar
+    @cancion = Cancion.find_by_id!(params[:cancion_id])
+    @parrafo = @cancion.parrafos.find_by!(posicion: params[:parrafo_pos])
+    @parrafo.comentarios.create({texto: params[:texto]})
+
+    flash[:notice] = t('comentario_creado')
+
+    redirect_to cancion_url(@cancion, parrafo_pos: @parrafo.posicion)
+  end
 
   def cancion_params
     params.require(:cancion).permit(:titulo, :artista, :imagen, :letra)

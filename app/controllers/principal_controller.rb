@@ -7,7 +7,6 @@ class PrincipalController < ApplicationController
     @canciones = Cancion
        .order(:visitas => :desc)
        .limit(ALM_CONFIG['mostrar_canciones_populares'])
-    @anuncios = Anuncio.all
   end
 
   def admin
@@ -16,11 +15,11 @@ class PrincipalController < ApplicationController
       if @contrasena == ALM_CONFIG['contrasena_admin']
         # login correcto
         session[:auth_timestamp] = Time.current
-        redirect_to admin_path
+        render 'principal/admin'
       else
         # login incorrecto
         flash[:alert] = t('contrasena_incorrecta')
-        redirect_to admin_path
+        render 'principal/login'
       end
 
     else

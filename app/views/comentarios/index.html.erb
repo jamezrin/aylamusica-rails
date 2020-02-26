@@ -1,0 +1,11 @@
+<%= render "partials/publicidad" do %>
+  <div class="container">
+    <ul class="list-group">
+      <% @comentarios.each do |comentario| %>
+        <li class="list-group-item">
+          <%= comentario[:created_at] %>: <%= comentario[:texto] %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

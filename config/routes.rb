@@ -13,8 +13,10 @@ Rails.application.routes.draw do
       resources :comentarios
     end
 
-    match 'comentar', to: 'canciones#comentar', :via => [:post]
-    match 'comentarios', to: 'canciones#comentarios', :via => [:post]
+    match 'accion', to: 'canciones#accion', :via => [:post]
+    match 'comentarios_json', to: 'canciones#comentarios_json', :via => [:post]
+    # match 'comentar', to: 'canciones#comentar', :via => [:post]
+    # match 'comentarios', to: 'canciones#comentarios', :via => [:post]
   end
 
   resources :insultos

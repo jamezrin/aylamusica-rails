@@ -1,59 +1,41 @@
-<div class="row no-gutters bg-light-dark">
-  <div class="col-12 col-lg-1">
-    <div>
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-    </div>
-  </div>
-  <div class="col-12 col-lg mt-5">
-    <div class="container justify-content-center">
-      <h1 class="text-center">
-        <% if params[:q].empty? %>
-          <%= t 'todas_las_canciones', busqueda: params[:q] %>
-        <% else %>
-          <%= t 'resultados_busqueda', busqueda: params[:q] %>
-        <% end %>
-      </h1>
-
-
-      <% if @canciones.empty? %>
-        <h2 class="text-center text-muted"><%= t 'ninguna_cancion' %></h2>
+<%= render "partials/publicidad" do %>
+  <div class="container justify-content-center">
+    <h1 class="text-center">
+      <% if params[:q].empty? %>
+        <%= t 'todas_las_canciones', busqueda: params[:q] %>
       <% else %>
-        <ul class="list-group">
-          <% @canciones.each do |cancion| %>
-            <li class="list-group-item my-2 rounded shadow-sm">
-              <%= link_to cancion_url(cancion) do %>
-                <div class="row">
-                  <div class="col">
-                    <% if cancion.imagen.attached? %>
-                      <%= image_tag cancion.imagen, class: 'no-drag-select', style: 'max-height: 8rem;' %>
-                    <% else %>
-                      <%= image_tag 'music_note_disk_icon.png', class: 'no-drag-select', style: 'max-height: 8rem;' %>
-                    <% end %>
-                  </div>
+        <%= t 'resultados_busqueda', busqueda: params[:q] %>
+      <% end %>
+    </h1>
 
-                  <div class="col-10">
-                    <div class="mt-3">
-                      <h5 class="card-title"><%= cancion.titulo %></h5>
-                      <h6 class="card-subtitle mb-2 text-muted"><%= cancion.artista %></h6>
-                    </div>
+
+    <% if @canciones.empty? %>
+      <h2 class="text-center text-muted"><%= t 'ninguna_cancion' %></h2>
+    <% else %>
+      <ul class="list-group">
+        <% @canciones.each do |cancion| %>
+          <li class="list-group-item my-2 rounded shadow-sm">
+            <%= link_to cancion_url(cancion) do %>
+              <div class="row">
+                <div class="col">
+                  <% if cancion.imagen.attached? %>
+                    <%= image_tag cancion.imagen, class: 'no-drag-select', style: 'max-height: 8rem;' %>
+                  <% else %>
+                    <%= image_tag 'music_note_disk_icon.png', class: 'no-drag-select', style: 'max-height: 8rem;' %>
+                  <% end %>
+                </div>
+
+                <div class="col-10">
+                  <div class="mt-3">
+                    <h5 class="card-title"><%= cancion.titulo %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= cancion.artista %></h6>
                   </div>
                 </div>
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
-      <% end %>
-    </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
-  <div class="col-12 col-lg-1 px-0 d-none d-lg-flex">
-    <div>
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4a66f333332919.56a84344447ec.jpg" class="w-100">
-    </div>
-  </div>
-</div>
+<% end %>

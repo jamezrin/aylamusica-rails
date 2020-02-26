@@ -1,13 +1,13 @@
 <div class="row no-gutters bg-light-dark">
   <div class="col-12 col-lg-1">
     <div class="contenedor-anuncios">
-      <% @anuncios.each_with_index do |anuncio, index| %>
+      <% Anuncio.order(:posicion => :asc).each_with_index do |anuncio, index| %>
         <% if anuncio.imagen.attached? && index % 2 == 0 %>
-          <%= link_to anuncio.url do %>
+          <%= link_to anuncio.url, target: '_blank' do %>
             <% if index == 0 %>
-              <%= image_tag anuncio.imagen, class: 'w-100', target: '_blank' %>
+              <%= image_tag anuncio.imagen, class: 'w-100' %>
             <% else %>
-              <%= image_tag anuncio.imagen, class: 'w-100 d-none d-lg-block', target: '_blank' %>
+              <%= image_tag anuncio.imagen, class: 'w-100 d-none d-lg-block' %>
             <% end %>
           <% end %>
         <% end %>
@@ -19,13 +19,13 @@
   </div>
   <div class="col-12 col-lg-1">
     <div class="contenedor-anuncios">
-      <% @anuncios.each_with_index do |anuncio, index| %>
+      <% Anuncio.order(:posicion => :asc).each_with_index do |anuncio, index| %>
         <% if anuncio.imagen.attached? && index % 2 != 0 %>
-          <%= link_to anuncio.url do %>
+          <%= link_to anuncio.url, target: '_blank' do %>
             <% if index == 0 %>
-              <%= image_tag anuncio.imagen, class: 'w-100', target: '_blank' %>
+              <%= image_tag anuncio.imagen, class: 'w-100' %>
             <% else %>
-              <%= image_tag anuncio.imagen, class: 'w-100 d-none d-lg-block', target: '_blank' %>
+              <%= image_tag anuncio.imagen, class: 'w-100 d-none d-lg-block' %>
             <% end %>
           <% end %>
         <% end %>
