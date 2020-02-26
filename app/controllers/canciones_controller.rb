@@ -1,6 +1,7 @@
 class CancionesController < ApplicationController
   before_action :auth_required, only: [:new, :create]
   skip_before_action :hook_urls, only: [:accion]
+  skip_before_action :force_maintenance
 
   def new
     @cancion = Cancion.new

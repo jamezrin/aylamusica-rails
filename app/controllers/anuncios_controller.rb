@@ -1,5 +1,6 @@
 class AnunciosController < ApplicationController
   before_action :auth_required
+  skip_before_action :force_maintenance
 
   def new
     @anuncio = Anuncio.new

@@ -15,6 +15,8 @@ require("channels");
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+import "jquery-ujs";
+
 import "bootstrap";
 import "@fortawesome/fontawesome-free";
 
