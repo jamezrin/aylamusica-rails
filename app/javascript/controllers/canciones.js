@@ -9,22 +9,24 @@ function fetchParrafo(posicion, callback) {
 
 function fillParrafos(comentarios) {
    const listaComentarios = $('#lista-comentarios');
-   const elSinComentarios = $('#lista-comentarios + #lista-sin-comentarios');
+   const elAdvertenciaLista = $('#advertencia-lista');
+   const elAdvertenciaListaTexto = $('#advertencia-lista__texto');
 
    listaComentarios.empty();
    if (comentarios.length > 0) {
-      elSinComentarios.hide();
+      elAdvertenciaLista.hide();
       comentarios.forEach(comentario => {
-         const textComentario = comentario["texto"];
+         const textoComentario = comentario["texto"];
          const fechaCreacion = new Date(Date.parse(comentario["created_at"]));
          listaComentarios.append(`
             <li class="list-group-item">
-               ${fechaCreacion.toLocaleString()}: ${textComentario}
+               ${fechaCreacion.toLocaleString()}: ${textoComentario}
             </li>`
          );
       });
    } else {
-      elSinComentarios.show();
+      elAdvertenciaLista.show();
+      elAdvertenciaListaTexto.html(elAdvertenciaListaTexto.attr('data-nocomments-text'));
    }
 }
 
@@ -42,11 +44,11 @@ function updateParrafos(parrafos, posicion) {
 $(document).on('turbolinks:load', function() {
    const cacheParrafos = [];
 
-   $('.cancion .parrafo input').on('change', function(event) {
+   $('.cancion form .parrafo input').on('change', function(event) {
       updateParrafos(cacheParrafos, event.target.value)
    });
 
-   $('.cancion .parrafo input:checked').each(function() {
+   $('.cancion form .parrafo input:checked').each(function() {
       updateParrafos(cacheParrafos, this.value);
    });
 });

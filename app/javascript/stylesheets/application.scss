@@ -98,4 +98,8 @@ a.skip:hover {
 
 #lista-comentarios {
   max-height: 30rem;
+
+  li.list-group-item {
+    word-wrap: break-word;
+  }
 }

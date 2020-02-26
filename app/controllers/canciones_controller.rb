@@ -1,6 +1,6 @@
 class CancionesController < ApplicationController
   before_action :auth_required, only: [:new, :create]
-  skip_before_action :hook_urls, only: [:comentar, :comentarios]
+  skip_before_action :hook_urls, only: [:accion]
 
   def new
     @cancion = Cancion.new
@@ -46,10 +46,13 @@ class CancionesController < ApplicationController
   end
 
   def accion
-    if params[:commit] == t('acciones.ver_comentarios')
-      comentarios
-    elsif params[:commit] == t('acciones.crear_comentario')
-      comentar
+    case params[:commit]
+    when t('acciones.ver_comentarios')
+      return comentarios
+    when t('acciones.crear_comentario')
+      return comentar
+    else
+      render :file => "public/404.html", :status => :unauthorized, :layout => false
     end
   end
 

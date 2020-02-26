@@ -1,8 +1,8 @@
-<div class="row no-gutters bg-light-dark">
+<div class="row no-gutters bg-light-dark min-vh-100">
   <div class="col-12 col-lg-1">
     <div class="contenedor-anuncios">
       <% Anuncio.order(:posicion => :asc).each_with_index do |anuncio, index| %>
-        <% if anuncio.imagen.attached? && index % 2 == 0 %>
+        <% if anuncio.imagen.attached? && anuncio.posicion % 2 == 0 %>
           <%= link_to anuncio.url, target: '_blank' do %>
             <% if index == 0 %>
               <%= image_tag anuncio.imagen, class: 'w-100' %>
@@ -20,7 +20,7 @@
   <div class="col-12 col-lg-1">
     <div class="contenedor-anuncios">
       <% Anuncio.order(:posicion => :asc).each_with_index do |anuncio, index| %>
-        <% if anuncio.imagen.attached? && index % 2 != 0 %>
+        <% if anuncio.imagen.attached? && anuncio.posicion % 2 != 0 %>
           <%= link_to anuncio.url, target: '_blank' do %>
             <% if index == 0 %>
               <%= image_tag anuncio.imagen, class: 'w-100' %>

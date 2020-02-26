@@ -32,9 +32,13 @@ class ApplicationController < ActionController::Base
   end
 
   def auth_required
-    render :file => "public/422.html", :status => :unauthorized, :layout => false unless logged_in?
-
-    auth_expire
+    if logged_in?
+      auth_expire
+    else
+      render :file => "public/422.html",
+             :status => :unauthorized,
+             :layout => false
+    end
   end
 
   def auth_session_expired?
@@ -51,7 +55,15 @@ class ApplicationController < ActionController::Base
   end
 
   def force_maintenance
-    session[:auth_last_action_time] = Time.current # para que las sesiones no expiren
-    render :file => "public/503.html", :status => :service_unavailable, :layout => false if ALM_CONFIG["mantenimiento"]
+    if logged_in?
+      # para que las sesiones no expiren
+      session[:auth_last_action_time] = Time.current
+    end
+
+    if ALM_CONFIG["mantenimiento"]
+      render :file => "public/503.html",
+             :status => :service_unavailable,
+             :layout => false
+      end
   end
 end

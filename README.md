@@ -71,6 +71,8 @@ rake db:migrate:redo
 - [ ] Utilizar cookies para no usar parámetros de url
     - Al usar parámetros de url la primera vez que comentas se añade una visualización, ya que cambia la URL
     - Se puede utilizar para `parrafo_pos` y para `locale`
+- [ ] Eliminar required del campo de texto del comentario para que cuando se desactive el javascript se puedan 
+      ver los comentarios
 - ...
 
 ## Accesibilidad
