@@ -1,61 +1,31 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
+---
 es:
   acciones:
-    cerrar: "Cerrar"
-    buscar: "Buscar"
-    crear_comentario: "Enviar comentario"
-    ver_comentarios: "Ver comentarios"
-  titulo_buscar_cancion: "Busca una canción fácilmente"
-  titulo_canciones_populares: "Las canciones mas populares"
-  iniciar_sesion: "Iniciar sesión"
-  contrasena_incorrecta: "La contraseña que has introducido no es correcta"
-  sesion_cerrada: "Se ha cerrado tu sesión correctamente"
-  sesion_expirada: "Tu sesión ha expirado, vuelve a iniciar sesión"
-  cerrar_sesion: "Cerrar sesión"
+    buscar: Buscar
+    cerrar: Cerrar
+    crear_comentario: Enviar comentario
+    ver_comentarios: Ver comentarios
+  anuncio_creado: Anuncio creado correctamente
+  buscar_todas: Dejar este campo vacío para ver todas
+  cerrar_sesion: Cerrar sesión
+  comentario_creado: Comentario enviado correctamente
+  contrasena_incorrecta: La contraseña que has introducido no es correcta
+  iniciar_sesion: Iniciar sesión
+  insulto_creado: Insulto creado correctamente
+  ningun_comentario: De momento nadie ha comentado en este párrafo. ¡Sé el primero en hacerlo!
+  ninguna_cancion: Ningún resultado
+  ninguna_seleccion: Haz click en un párrafo para ver los comentarios
+  nota_iniciar_sesion: Todas sus acciones serán registradas y monitorizadas
+  nueva_cancion: Nueva canción
+  nuevo_anuncio: Nuevo anuncio
+  nuevo_insulto: Nuevo insulto
+  resultados_busqueda: Resultados de tu búsqueda "%{busqueda}"
+  saltar_al_contenido: Saltar al contenido
+  sesion_cerrada: Se ha cerrado tu sesión correctamente
+  sesion_expirada: Tu sesión ha expirado, vuelve a iniciar sesión
+  titulo_buscar_cancion: Busca una canción fácilmente
+  titulo_canciones_populares: Las canciones mas populares
+  titulo_comentarios: Comentarios
+  titulo_crear_comentario: Dí algo
+  todas_las_canciones: Todas las canciones
   visitas_cancion: "%{visitas} visitas"
-  nota_iniciar_sesion: "Todas sus acciones serán registradas y monitorizadas"
-  saltar_al_contenido: "Saltar al contenido"
-  titulo_comentarios: "Comentarios"
-  titulo_crear_comentario: "Dí algo"
-  comentario_creado: "Comentario enviado correctamente"
-  nueva_cancion: "Nueva canción"
-  nuevo_insulto: "Nuevo insulto"
-  nuevo_anuncio: "Nuevo anuncio"
-  ningun_comentario: "De momento nadie ha comentado en este párrafo. ¡Sé el primero en hacerlo!"
-  resultados_busqueda: "Resultados de tu búsqueda \"%{busqueda}\""
-  todas_las_canciones: "Todas las canciones"
-  ninguna_cancion: "Ningún resultado"
-  buscar_todas: "Dejar este campo vacío para ver todas"
-  anuncio_creado: "Anuncio creado correctamente"
-  insulto_creado: "Insulto creado correctamente"
-  ninguna_seleccion: "Haz click en un párrafo para ver los comentarios"
