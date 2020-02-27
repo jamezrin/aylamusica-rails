@@ -2,19 +2,15 @@ Rails.application.routes.draw do
   get 'salir', to: 'principal#salir'
   match 'buscar', to: 'principal#buscar', :via => :get
   match 'admin', to: 'principal#admin', :via => [:get, :post]
-  match 'admin/mantenimiento', to: 'admin#mantenimiento', :via => [:get, :post]
-  match 'admin/crear_log', to: 'admin#crear_log', :via => :get
   match 'admin/ver_log', to: 'admin#ver_log', :via => :get
+  match 'admin/crear_log', to: 'admin#crear_log', :via => :get
   match 'admin/contrasena', to: 'admin#contrasena', :via => [:get, :post]
   match 'admin/inactividad', to: 'admin#inactividad', :via => [:get, :post]
   match 'admin/correo_masivo', to: 'admin#correo_masivo', :via => [:get, :post]
   match 'admin/import_export', to: 'admin#import_export', :via => [:get, :post]
+  match 'admin/mantenimiento', to: 'admin#mantenimiento', :via => [:get, :post]
 
   resources :canciones do
-    resources :parrafos do
-      resources :comentarios
-    end
-
     match 'accion', to: 'canciones#accion', :via => [:post]
     match 'comentarios_json', to: 'canciones#comentarios_json', :via => [:post]
     # match 'comentar', to: 'canciones#comentar', :via => [:post]

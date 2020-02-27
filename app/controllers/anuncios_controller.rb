@@ -1,5 +1,5 @@
 class AnunciosController < ApplicationController
-  before_action :auth_required
+  before_action :auth_required, except: [:show]
 
   def new
     @anuncio = Anuncio.new
@@ -14,6 +14,14 @@ class AnunciosController < ApplicationController
     flash[:notice] = t('respuestas.anuncio_creado')
 
     redirect_back fallback_location: admin_url
+  end
+
+  def show
+    @anuncio = Anuncio.find_by_id! params[:id]
+    @anuncio.visitas += 1
+    @anuncio.save
+
+    redirect_to @anuncio.url
   end
 
   private

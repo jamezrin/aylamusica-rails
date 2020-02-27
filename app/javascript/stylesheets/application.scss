@@ -45,42 +45,42 @@ a.skip:hover {
   background-color: #fff;
 }
 
-#ver-cancion {
-  .parrafo {
-    list-style-type: none;
-    transition: transform ease-in-out 0.075s;
+.parrafo {
+  list-style-type: none;
+  transition: transform ease-in-out 0.075s;
 
-    &:hover {
-      transform: scale(1.025);
-    }
-
-    label {
-      padding: 1em;
-      background-color: white;
-      border-radius: 20px;
-      cursor: pointer;
-      white-space: pre-line;
-    }
-
-    input {
-      position: absolute;
-      left: -999999px;
-      width: 1px;
-      height: 1px;
-    }
-
-    input:checked ~ label {
-      background-color: rgba(59, 212, 193, 0.25);
-    }
+  &:hover {
+    transform: scale(1.025);
   }
 
-  #lista-comentarios {
-    max-height: 30rem;
-
-    li.list-group-item {
-      word-wrap: break-word;
-    }
+  label {
+    padding: 1em;
+    background-color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: pre-line;
   }
+
+  input {
+    position: absolute;
+    left: -999999px;
+    width: 1px;
+    height: 1px;
+  }
+
+  input:checked ~ label {
+    background-color: rgba(59, 212, 193, 0.25);
+  }
+}
+
+#ver-comentarios, #lista-comentarios {
+  li.list-group-item {
+    word-wrap: break-word;
+  }
+}
+
+#lista-comentarios {
+  max-height: 30rem;
 }
 
 .cancion-popular {

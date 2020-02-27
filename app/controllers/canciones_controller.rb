@@ -1,6 +1,6 @@
 class CancionesController < ApplicationController
   before_action :auth_required, only: [:new, :create]
-  skip_before_action :hook_urls, only: [:accion]
+  skip_before_action :hook_urls, only: [:accion, :comentarios_json]
 
   def new
     @cancion = Cancion.new
@@ -35,14 +35,11 @@ class CancionesController < ApplicationController
   def comentarios_json
     @cancion = Cancion.find_by_id!(params[:cancion_id])
     @parrafo = @cancion.parrafos.find_by!(posicion: params[:parrafo_pos])
-    @comentarios = @parrafo.comentarios.order(:created_at => :desc)
+    @comentarios = @parrafo.comentarios
+                       .order(:created_at => :desc)
+                       .map { |comentario| mapear_comentario(comentario) }
 
-    render json: @comentarios.map { |comentario|
-      {
-          texto: censurar_comentario(comentario.texto),
-          created_at: comentario.created_at
-      }
-    }
+    render json: @comentarios
   end
 
   def accion
@@ -58,15 +55,19 @@ class CancionesController < ApplicationController
 
   private
 
+  def mapear_comentario(comentario)
+    {
+        texto: Rack::Utils::escape_html(comentario.texto),
+        created_at: comentario.created_at
+    }
+  end
+
   def comentarios
     @cancion = Cancion.find_by_id!(params[:cancion_id])
     @parrafo = @cancion.parrafos.find_by!(posicion: params[:parrafo_pos])
-    @comentarios = @parrafo.comentarios.order(:created_at => :desc).map { |comentario|
-      {
-          texto: censurar_comentario(comentario.texto),
-          created_at: comentario.created_at
-      }
-    }
+    @comentarios = @parrafo.comentarios
+                       .order(:created_at => :desc)
+                       .map { |comentario| mapear_comentario(comentario) }
 
     render "comentarios/index"
   end
