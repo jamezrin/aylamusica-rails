@@ -76,7 +76,7 @@ class CancionesController < ApplicationController
     @parrafo = @cancion.parrafos.find_by!(posicion: params[:parrafo_pos])
     @parrafo.comentarios.create({texto: params[:texto]})
 
-    flash[:notice] = t('comentario_creado')
+    flash[:notice] = t('respuestas.comentario_creado')
 
     redirect_to cancion_url(@cancion, parrafo_pos: @parrafo.posicion)
   end

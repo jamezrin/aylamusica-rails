@@ -1,24 +1,22 @@
 <%= render "partials/publicidad" do %>
-  <div class="container justify-content-center mt-5 text-center" id="ver-principal">
-    <div>
+  <div class="container justify-content-center mt-5" id="ver-principal">
+    <div class="offset-2 col-8 text-center">
       <h1><%= t("titulo_buscar_cancion") %></h1>
 
       <%= form_with url: buscar_url, local: true, method: :get do |f| %>
         <div class="form-group">
-          <%= f.text_field :q, class: 'offset-3 col-6 form-control form-control-lg', placeholder: t('buscar_todas') %>
+          <%= f.text_field :q, class: 'form-control form-control-lg', placeholder: t('buscar_todas') %>
         </div>
         <%= f.submit t('acciones.buscar'), name: nil, class: 'btn btn-primary' %>
       <% end %>
+
+      <%= image_tag 'undraw_music_disc.svg', class: 'w-100 px-5 mt-5 no-drag-select' %>
     </div>
 
-    <%= image_tag 'undraw_music_disc.svg', class: 'w-50 mt-5 no-drag-select' %>
-
-    <div class="mt-5">
+    <div class="mt-5 text-center">
       <h2><%= t('titulo_canciones_populares') %></h2>
-      <ul class="list-unstyled d-flex flex-row justify-content-center flex-wrap">
-        <% if @canciones.empty? %>
-        <h3 class="text-muted w-50"><%= t 'ninguna_cancion' %></h3>
-        <% else %>
+      <ul class="list-unstyled d-flex flex-row flex-wrap justify-content-center">
+        <% if !@canciones.empty? %>
           <% @canciones.each do |cancion| %>
             <li>
               <a href="<%= cancion_url(cancion) %>" class="text-decoration-none">
@@ -37,6 +35,8 @@
               </a>
             </li>
           <% end %>
+        <% else %>
+          <h3 class="text-muted w-50"><%= t 'ninguna_cancion' %></h3>
         <% end %>
       </ul>
     </div>

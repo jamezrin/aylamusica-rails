@@ -1,23 +1,23 @@
-<div class="container mt-5" id="crear-insulto">
-  <h1>
-    <%= t('nuevo_insulto') %>
-  </h1>
+<div class="bg-light-dark min-vh-100">
+  <div class="container pt-5" id="crear-insulto">
+    <h1><%= t('titulo_nuevo_insulto') %></h1>
 
-  <% if flash[:notice] %>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <strong><%= notice %></strong>
-      <button type="button" class="close" data-dismiss="alert" aria-label="<%= t 'acciones.cerrar' %>">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-  <% end %>
+    <% if flash[:notice] %>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong><%= notice %></strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="<%= t 'acciones.cerrar' %>">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% end %>
 
-  <%= form_with model: @insulto, local: true do |form| %>
-    <p class="form-group form-inline">
-      <%= form.label :insulto %><br>
-      <%= form.text_field :insulto, class: 'form-control ml-4' %>
-    </p>
+    <%= form_with model: @insulto, local: true do |form| %>
+      <p class="form-group form-inline">
+        <%= form.label :insulto %><br>
+        <%= form.text_field :insulto, class: 'form-control ml-4' %>
+      </p>
 
-    <%= form.submit class: 'btn btn-primary' %>
-  <% end %>
+      <%= form.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
 </div>

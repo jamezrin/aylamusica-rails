@@ -5,28 +5,44 @@ es:
     cerrar: Cerrar
     crear_comentario: Enviar comentario
     ver_comentarios: Ver comentarios
-  anuncio_creado: Anuncio creado correctamente
+    ir: Ir
+    activar: Activar
+    desactivar: Desactivar
+    enviar: Enviar
+    cerrar_sesion: Cerrar sesión
+    iniciar_sesion: Iniciar sesión
+    crear: Crear
+    nuevo: Nuevo
+  secciones:
+    mantenimiento: Mantenimiento
+    archivo_log: Archivo de log
+    administracion: Administración
+    insultos: Insultos
+    anuncios: Anuncios
+    canciones: Canciones
+    todas_las_canciones: Todas las canciones
+  respuestas:
+    mantenimiento_activado: El modo de mantenimiento ha sido activado correctamente
+    mantenimiento_desactivado: El modo de mantenimiento ha sido desactivado correctamente
+    anuncio_creado: Anuncio creado correctamente
+    comentario_creado: Comentario enviado correctamente
+    insulto_creado: Insulto creado correctamente
+    sesion_cerrada: Se ha cerrado tu sesión correctamente
+    sesion_expirada: Tu sesión ha expirado, vuelve a iniciar sesión
   buscar_todas: Dejar este campo vacío para ver todas
-  cerrar_sesion: Cerrar sesión
-  comentario_creado: Comentario enviado correctamente
   contrasena_incorrecta: La contraseña que has introducido no es correcta
-  iniciar_sesion: Iniciar sesión
-  insulto_creado: Insulto creado correctamente
   ningun_comentario: De momento nadie ha comentado en este párrafo. ¡Sé el primero en hacerlo!
   ningun_resultado_cancion: Ningún resultado
   ninguna_cancion: No se han encontrado canciones en nuestra base de datos
   ninguna_seleccion: Haz click en un párrafo para ver los comentarios
   nota_iniciar_sesion: Todas sus acciones serán registradas y monitorizadas
-  nueva_cancion: Nueva canción
-  nuevo_anuncio: Nuevo anuncio
-  nuevo_insulto: Nuevo insulto
   resultados_busqueda: Resultados de tu búsqueda "%{busqueda}"
   saltar_al_contenido: Saltar al contenido
-  sesion_cerrada: Se ha cerrado tu sesión correctamente
-  sesion_expirada: Tu sesión ha expirado, vuelve a iniciar sesión
   titulo_buscar_cancion: Busca una canción fácilmente
   titulo_canciones_populares: Las canciones mas populares
   titulo_comentarios: Comentarios
   titulo_crear_comentario: Dí algo
-  todas_las_canciones: Todas las canciones
+  titulo_crear_cancion: Nueva canción
+  titulo_nuevo_anuncio: Nuevo anuncio
+  titulo_nuevo_insulto: Nuevo insulto
   visitas_cancion: "%{visitas} visitas"

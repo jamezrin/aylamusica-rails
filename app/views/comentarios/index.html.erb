@@ -1,6 +1,8 @@
 <%= render "partials/publicidad" do %>
-  <div class="container" id="ver-comentarios">
-    <ul class="list-group">
+  <div class="container pt-5" id="ver-comentarios">
+    <h1 class="text-center"><%= t 'titulo_comentarios' %></h1>
+
+    <ul class="list-group mt-3">
       <% @comentarios.each do |comentario| %>
         <li class="list-group-item">
           <%= comentario[:created_at] %>: <%= comentario[:texto] %>

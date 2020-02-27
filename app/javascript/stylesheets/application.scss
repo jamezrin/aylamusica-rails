@@ -45,7 +45,7 @@ a.skip:hover {
   background-color: #fff;
 }
 
-#ver-cancion .parrafo {
+.parrafo {
   list-style-type: none;
   transition: transform ease-in-out 0.075s;
 
@@ -81,7 +81,7 @@ a.skip:hover {
   }
 }
 
-#ver-principal .cancion-popular {
+.cancion-popular {
   transition: transform ease-in-out 0.125s;
 
   &:hover {
@@ -101,4 +101,9 @@ a.skip:hover {
     border-radius: 100% !important;
     filter: grayscale(1);
   }
+}
+
+.accion-admin {
+  width: 15rem;
+  height: 15rem;
 }

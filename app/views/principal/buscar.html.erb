@@ -2,16 +2,13 @@
   <div class="container justify-content-center mt-5">
     <h1 class="text-center">
       <% if params[:q].empty? %>
-        <%= t 'todas_las_canciones', busqueda: params[:q] %>
+        <%= t 'secciones.todas_las_canciones', busqueda: params[:q] %>
       <% else %>
         <%= t 'resultados_busqueda', busqueda: params[:q] %>
       <% end %>
     </h1>
 
-
-    <% if @canciones.empty? %>
-      <h2 class="text-center text-muted"><%= t 'ningun_resultado_cancion' %></h2>
-    <% else %>
+    <% if !@canciones.empty? %>
       <ul class="list-group">
         <% @canciones.each do |cancion| %>
           <li class="list-group-item my-2 shadow-sm rounded-lg">
@@ -24,14 +21,16 @@
                               style: 'max-height: 8rem;' %>
 
                 <div class="p-3">
-                  <h3 class="card-title"><%= cancion.titulo %></h3>
-                  <h4 class="card-subtitle mb-2 text-muted"><%= cancion.artista %></h4>
+                  <h2 class="h3 card-title"><%= cancion.titulo %></h2>
+                  <h3 class="h4 card-subtitle mb-2 text-muted"><%= cancion.artista %></h3>
                 </div>
               </div>
             <% end %>
           </li>
         <% end %>
       </ul>
+    <% else %>
+      <h2 class="text-center text-muted"><%= t 'ningun_resultado_cancion' %></h2>
     <% end %>
   </div>
 <% end %>

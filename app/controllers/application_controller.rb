@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   def auth_expire
     if auth_session_expired?
       reset_session
-      flash[:alert] = t('sesion_expirada')
+      flash[:alert] = t('respuestas.sesion_expirada')
       redirect_to admin_url
     end
   end
@@ -58,12 +58,12 @@ class ApplicationController < ActionController::Base
     if logged_in?
       # para que las sesiones no expiren
       session[:auth_last_action_time] = Time.current
-    end
-
-    if ALM_CONFIG["mantenimiento"]
-      render :file => "public/503.html",
-             :status => :service_unavailable,
-             :layout => false
+    else
+      if ALM_CONFIG["mantenimiento"]
+        render :file => "public/503.html",
+               :status => :service_unavailable,
+               :layout => false
       end
+    end
   end
 end

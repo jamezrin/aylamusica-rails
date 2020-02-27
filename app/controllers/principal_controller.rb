@@ -35,7 +35,7 @@ class PrincipalController < ApplicationController
 
   def salir
     reset_session
-    flash[:notice] = t('sesion_cerrada')
+    flash[:notice] = t('respuestas.sesion_cerrada')
     redirect_to admin_path
   end
 

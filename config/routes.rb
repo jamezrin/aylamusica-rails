@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   match 'admin', to: 'principal#admin', :via => [:get, :post]
 
   match 'admin/mantenimiento', to: 'admin#mantenimiento', :via => [:get, :post]
+  match 'admin/crear_log', to: 'admin#crear_log', :via => :get
+  match 'admin/ver_log', to: 'admin#crear_log', :via => :get
 
   resources :canciones do
     resources :parrafos do

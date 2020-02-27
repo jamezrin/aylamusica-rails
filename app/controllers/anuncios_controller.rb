@@ -11,7 +11,7 @@ class AnunciosController < ApplicationController
     @anuncio = Anuncio.new anuncio_params
     @anuncio.save
 
-    flash[:notice] = t('anuncio_creado')
+    flash[:notice] = t('respuestas.anuncio_creado')
 
     redirect_back fallback_location: admin_url
   end

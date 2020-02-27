@@ -14,11 +14,16 @@
               <h1><%= @cancion.titulo %></h1>
               <h2><%= @cancion.artista %></h2>
               <p>
-                <i class="fas fa-eye"></i>
-                <%= t 'visitas_cancion', visitas: @cancion.visitas %>
+                <span class="pr-1">
+                  <i class="fas fa-eye"></i>
+                  <%= t 'visitas_cancion', visitas: @cancion.visitas %>
+                </span>
+                <a href="#" class="text-dark">
+                  <i class="fas fa-envelope"></i>
+                  <%= t 'enviar_correo' %>
+                </a>
               </p>
             </div>
-
           </div>
 
           <ul class="list-unstyled pl-0">
@@ -60,7 +65,6 @@
                 <p id="advertencia-lista__texto" class="p-3" data-nocomments-text="<%= t 'ningun_comentario' %>"><%= t 'ninguna_seleccion' %></p>
               </div>
             </div>
-
             <noscript>
               <%= f.submit t('acciones.ver_comentarios'), class: 'form-control', id: 'cancion-comentarios' %>
             </noscript>

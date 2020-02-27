@@ -7,6 +7,12 @@ class AdminController < ApplicationController
         !ALM_CONFIG["mantenimiento"]
     save_alm_config
 
+    if ALM_CONFIG["mantenimiento"]
+      flash[:notice] = t('respuestas.mantenimiento_activado')
+    else
+      flash[:notice] = t('respuestas.mantenimiento_desactivado')
+    end
+
     redirect_to :admin
   end
 end
