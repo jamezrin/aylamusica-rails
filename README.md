@@ -73,6 +73,7 @@ rake db:migrate:redo
     - Se puede utilizar para `parrafo_pos` y para `locale`
 - [ ] Eliminar required del campo de texto del comentario para que cuando se desactive el javascript se puedan 
       ver los comentarios
+- [ ] Añadir el atributo alt a las imágenes
 - ...
 
 ## Accesibilidad

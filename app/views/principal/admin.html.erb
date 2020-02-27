@@ -5,7 +5,7 @@
 <% end %>
 
 <div class="bg-light-dark min-vh-100">
-  <div class="container pt-5" id="ver-admin">
+  <div class="container py-5" id="ver-admin">
     <h1 class="text-center">
       <%= t 'secciones.administracion' %>
     </h1>
@@ -25,37 +25,35 @@
         <div class="card-body">
           <h2 class="h5 card-title"><%= t 'secciones.canciones' %></h2>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in enim laoreet, tincidunt est et, pulvinar elit.</p>
-          <%= link_to t('titulo_crear_cancion'), new_cancion_url, class: 'btn btn-primary' %>
+          <%= link_to t('acciones.crear'), new_cancion_url, class: 'btn btn-primary' %>
         </div>
       </div>
       <div class="card bg-white m-4 accion-admin">
         <div class="card-body">
           <h2 class="h5 card-title"><%= t 'secciones.insultos' %></h2>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in enim laoreet, tincidunt est et, pulvinar elit.</p>
-          <%= link_to t('acciones.crear'), new_insulto_url, class: 'btn btn-primary' %>
-          <%= link_to t('acciones.cambiar'), new_insulto_url, class: 'btn btn-primary' %>
+          <%= link_to t('acciones.gestionar'), new_insulto_url, class: 'btn btn-primary' %>
         </div>
       </div>
       <div class="card bg-white m-4 accion-admin">
         <div class="card-body">
           <h2 class="h5 card-title"><%= t 'secciones.contrasena_admin' %></h2>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in enim laoreet, tincidunt est et, pulvinar elit.</p>
-          <%= link_to t('titulo.cambiar'), admin_url, class: 'btn btn-primary' %>
+          <%= link_to t('titulo.cambiar'), admin_contrasena_url, class: 'btn btn-primary' %>
         </div>
       </div>
       <div class="card bg-white m-4 accion-admin">
         <div class="card-body">
           <h2 class="h5 card-title"><%= t 'secciones.anuncios' %></h2>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in enim laoreet, tincidunt est et, pulvinar elit.</p>
-          <%= link_to t('acciones.nuevo'), new_anuncio_url, class: 'btn btn-primary' %>
-          <%= link_to t('acciones.gestionar'), new_insulto_url, class: 'btn btn-primary' %>
+          <%= link_to t('acciones.gestionar'), anuncios_url, class: 'btn btn-primary' %>
         </div>
       </div>
       <div class="card bg-white m-4 accion-admin">
         <div class="card-body">
           <h2 class="h5 card-title"><%= t 'nombres.correo_masivo' %></h2>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in enim laoreet, tincidunt est et, pulvinar elit.</p>
-          <%= link_to t('acciones.enviar'), new_cancion_url, class: 'btn btn-primary' %>
+          <%= link_to t('acciones.enviar'), admin_correo_masivo_url, class: 'btn btn-primary' %>
         </div>
       </div>
       <div class="card bg-white m-4 accion-admin">
@@ -73,8 +71,21 @@
         <div class="card-body">
           <h2 class="h5 card-title"><%= t 'secciones.archivo_log' %></h2>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in enim laoreet, tincidunt est et, pulvinar elit.</p>
-          <%= link_to t('titulo.crear_log'), admin_crear_log_url, class: 'btn btn-primary' %>
           <%= link_to t('titulo.ver_log'), admin_ver_log_url, class: 'btn btn-primary' %>
+        </div>
+      </div>
+      <div class="card bg-white m-4 accion-admin">
+        <div class="card-body">
+          <h2 class="h5 card-title"><%= t 'secciones.import_export' %></h2>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in enim laoreet, tincidunt est et, pulvinar elit.</p>
+          <%= link_to t('acciones.gestionar'), admin_import_export_url, class: 'btn btn-primary' %>
+        </div>
+      </div>
+      <div class="card bg-white m-4 accion-admin">
+        <div class="card-body">
+          <h2 class="h5 card-title"><%= t 'secciones.inactividad' %></h2>
+          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in enim laoreet, tincidunt est et, pulvinar elit.</p>
+          <%= link_to t('acciones.cambiar'), admin_inactividad_url, class: 'btn btn-primary' %>
         </div>
       </div>
     </div>

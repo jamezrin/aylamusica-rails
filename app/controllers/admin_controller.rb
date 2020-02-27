@@ -15,4 +15,28 @@ class AdminController < ApplicationController
 
     redirect_to :admin
   end
+
+  def crear_log
+
+  end
+
+  def ver_log
+
+  end
+
+  def contrasena
+
+  end
+
+  def inactividad
+
+  end
+
+  def correo_masivo
+
+  end
+
+  def import_export
+
+  end
 end

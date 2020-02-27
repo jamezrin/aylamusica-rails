@@ -45,31 +45,33 @@ a.skip:hover {
   background-color: #fff;
 }
 
-.parrafo {
-  list-style-type: none;
-  transition: transform ease-in-out 0.075s;
+#ver-cancion {
+  .parrafo {
+    list-style-type: none;
+    transition: transform ease-in-out 0.075s;
 
-  &:hover {
-    transform: scale(1.025);
-  }
+    &:hover {
+      transform: scale(1.025);
+    }
 
-  label {
-    padding: 1em;
-    background-color: white;
-    border-radius: 20px;
-    cursor: pointer;
-    white-space: pre-line;
-  }
+    label {
+      padding: 1em;
+      background-color: white;
+      border-radius: 20px;
+      cursor: pointer;
+      white-space: pre-line;
+    }
 
-  input {
-    position: absolute;
-    left: -999999px;
-    width: 1px;
-    height: 1px;
-  }
+    input {
+      position: absolute;
+      left: -999999px;
+      width: 1px;
+      height: 1px;
+    }
 
-  input:checked ~ label {
-    background-color: rgba(59, 212, 193, 0.25);
+    input:checked ~ label {
+      background-color: rgba(59, 212, 193, 0.25);
+    }
   }
 
   #lista-comentarios {
@@ -106,4 +108,10 @@ a.skip:hover {
 .accion-admin {
   width: 15rem;
   height: 15rem;
+
+  transition: transform ease-in-out 0.125s;
+
+  &:hover {
+    transform: translate(0, -10px);
+  }
 }

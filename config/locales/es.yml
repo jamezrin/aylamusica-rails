@@ -13,12 +13,14 @@ es:
     iniciar_sesion: Iniciar sesión
     crear: Crear
     nuevo: Nuevo
+    gestionar: Gestionar
   secciones:
     mantenimiento: Mantenimiento
     archivo_log: Archivo de log
     administracion: Administración
     insultos: Insultos
     anuncios: Anuncios
+    import_export: Importar/Exportar
     canciones: Canciones
     todas_las_canciones: Todas las canciones
   respuestas:

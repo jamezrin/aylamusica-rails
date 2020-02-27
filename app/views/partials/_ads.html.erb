@@ -1,0 +1,25 @@
+<div class="row no-gutters bg-light-dark min-vh-100">
+  <div class="col-12 col-lg-1">
+    <div class="contenedor-anuncios">
+      <% Anuncio
+             .where("posicion % 2 = 0")
+             .order(:posicion => :asc)
+             .each_with_index do |anuncio, index| %>
+        <%= render 'partials/ad', anuncio: anuncio, index: index %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-12 col-lg">
+    <%= yield %>
+  </div>
+  <div class="col-12 col-lg-1">
+    <div class="contenedor-anuncios">
+      <% Anuncio
+             .where("posicion % 2 != 0")
+             .order(:posicion => :asc)
+             .each_with_index do |anuncio, index| %>
+        <%= render 'partials/ad', anuncio: anuncio, index: index %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<% if anuncio.imagen.attached? %>
+  <%= link_to anuncio.url, target: '_blank' do %>
+    <% if index == 0 %>
+      <%= image_tag anuncio.imagen, class: 'no-drag-select w-100' %>
+    <% else %>
+      <%= image_tag anuncio.imagen, class: 'no-drag-select w-100 d-none d-lg-block' %>
+    <% end %>
+  <% end %>
+<% end %>
