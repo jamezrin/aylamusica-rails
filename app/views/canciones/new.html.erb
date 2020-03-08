@@ -2,29 +2,29 @@
   <div class="container pt-5" id="crear-cancion">
     <h1><%= t('titulo_crear_cancion') %></h1>
 
-    <%= form_with(model: @cancion, local: true) do |form| %>
+    <%= form_with(model: @cancion, local: true) do |f| %>
       <p class="form-group">
-        <%= form.label :titulo %><br>
-        <%= form.text_field :titulo, class: 'form-control' %>
+        <%= f.label :titulo %><br>
+        <%= f.text_field :titulo, class: 'form-control' %>
       </p>
 
       <p class="form-group">
-        <%= form.label :artista %><br>
-        <%= form.text_field :artista, class: 'form-control' %>
+        <%= f.label :artista %><br>
+        <%= f.text_field :artista, class: 'form-control' %>
       </p>
 
       <p class="form-group">
-        <%= form.label :imagen %><br>
-        <%= form.file_field :imagen, class: 'form-control-file' %>
+        <%= f.label :imagen %><br>
+        <%= f.file_field :imagen, class: 'form-control-file' %>
       </p>
 
       <p class="form-group">
-        <%= form.label :letra %><br>
-        <%= form.text_area :letra, class: 'form-control', rows: 20 %>
+        <%= f.label :letra %><br>
+        <%= f.text_area :letra, class: 'form-control', rows: 20 %>
       </p>
 
       <p class="form-group">
-        <%= form.submit class: 'btn btn-primary' %>
+        <%= f.submit class: 'btn btn-primary' %>
       </p>
     <% end %>
   </div>

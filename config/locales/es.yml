@@ -14,6 +14,7 @@ es:
     crear: Crear
     nuevo: Nuevo
     gestionar: Gestionar
+    cambiar: Cambiar
   secciones:
     mantenimiento: Mantenimiento
     archivo_log: Archivo de log
@@ -45,6 +46,7 @@ es:
   titulo_comentarios: Comentarios
   titulo_crear_comentario: Dí algo
   titulo_crear_cancion: Nueva canción
-  titulo_nuevo_anuncio: Nuevo anuncio
+  titulo_crear_anuncio: Nuevo anuncio
   titulo_nuevo_insulto: Nuevo insulto
   visitas_cancion: "%{visitas} visitas"
+  enviar_correo: Enviar correo

@@ -2,37 +2,28 @@
   <div class="container pt-5" id="crear-anuncio">
     <h1><%= t('titulo_nuevo_anuncio') %></h1>
 
-    <% if flash[:notice] %>
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong><%= notice %></strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="<%= t 'acciones.cerrar' %>">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    <% end %>
-
-    <%= form_with(model: @anuncio, local: true) do |form| %>
+    <%= form_with(model: @anuncio, local: true) do |f| %>
       <p class="form-group">
-        <%= form.label :url %><br>
-        <%= form.url_field :url, class: 'form-control' %>
+        <%= f.label :url %><br>
+        <%= f.url_field :url, class: 'form-control' %>
       </p>
 
       <p class="form-group">
-        <%= form.label :imagen %><br>
-        <%= form.file_field :imagen, class: 'form-control-file' %>
+        <%= f.label :imagen %><br>
+        <%= f.file_field :imagen, class: 'form-control-file' %>
       </p>
 
       <p class="form-group">
-        <%= form.label :correo %><br>
-        <%= form.email_field :correo, class: 'form-control' %>
+        <%= f.label :correo %><br>
+        <%= f.email_field :correo, class: 'form-control' %>
       </p>
 
       <p class="form-group">
-        <%= form.label :posicion %>
-        <%= form.number_field :posicion, class: 'form-control' %>
+        <%= f.label :posicion %>
+        <%= f.number_field :posicion, class: 'form-control' %>
       </p>
 
-      <%= form.submit class: 'btn btn-primary' %>
+      <%= f.submit class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>

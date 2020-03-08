@@ -1,0 +1,27 @@
+<div class="bg-light-dark min-vh-100">
+  <div class="container pt-5" id="crear-cancion">
+    <h1><%= t('titulo_cambiar_contrasena') %></h1>
+
+    <%= render 'partials/alerts' %>
+
+    <%= form_with url: admin_contrasena_url, local: true, method: :post do |f| %>
+      <p class="form-group">
+        <%= f.label :antigua_contrasena %><br>
+        <%= f.password_field :antigua_contrasena, class: 'form-control' %>
+      </p>
+
+      <p class="form-group">
+        <%= f.label :nueva_contrasena %><br>
+        <%= f.password_field :nueva_contrasena, class: 'form-control' %>
+      </p>
+
+      <p class="form-group">
+        <%= f.label :confirmacion_nueva_contrasena %><br>
+        <%= f.password_field :confirmacion_nueva_contrasena, class: 'form-control' %>
+      </p>
+
+      <%= f.submit t('acciones.cambiar'), name: nil, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+

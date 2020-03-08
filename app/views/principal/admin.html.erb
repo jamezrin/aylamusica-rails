@@ -61,9 +61,9 @@
           <h2 class="h5 card-title"><%= t 'secciones.mantenimiento' %></h2>
           <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in enim laoreet, tincidunt est et, pulvinar elit.</p>
           <% if ALM_CONFIG['mantenimiento'] %>
-            <%= link_to t('accion.desactivar'), admin_mantenimiento_url, class: 'btn btn-success' %>
+            <%= link_to t('acciones.desactivar'), admin_mantenimiento_url, class: 'btn btn-success' %>
           <% else %>
-            <%= link_to t('accion.activar'), admin_mantenimiento_url, class: 'btn btn-danger' %>
+            <%= link_to t('acciones.activar'), admin_mantenimiento_url, class: 'btn btn-danger' %>
           <% end %>
         </div>
       </div>
