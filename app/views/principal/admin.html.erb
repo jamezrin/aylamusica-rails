@@ -10,14 +10,7 @@
       <%= t 'secciones.administracion' %>
     </h1>
 
-    <% if flash[:notice] %>
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong><%= notice %></strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="<%= t 'acciones.cerrar' %>">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    <% end %>
+    <%= render 'partials/alerts' %>
 
     <!-- Acciones -->
     <div class="d-flex flex-row flex-wrap justify-content-between">

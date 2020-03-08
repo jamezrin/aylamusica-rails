@@ -40,14 +40,7 @@
           <div class="sticky-top pt-5">
             <h3><%= t('titulo_crear_comentario') %></h3>
 
-            <% if flash[:notice] %>
-              <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong><%= notice %></strong>
-                <button type="button" class="close" data-dismiss="alert" aria-label="<%= t 'acciones.cerrar' %>">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-            <% end %>
+            <%= render 'partials/alerts' %>
 
             <div class="form-group">
               <%= f.text_area :texto, class: 'form-control', 'data-empty-text': 'asd', required: true %>
