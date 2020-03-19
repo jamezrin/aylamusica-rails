@@ -4,7 +4,7 @@
 
 - Version de ruby: `2.6.3` con `bundler` instalado.
 - Version de node: `v12.14.1` con `yarn` instalado.
-- Overmind o Foreman instalados, para ejecutar el `Procfile`
+- Opcional: Foreman o Overmind instalados, para ejecutar el `Procfile`
 
 ### Preparación
 
@@ -18,7 +18,7 @@ rake db:migrate
 ### Lanzar la aplicación
 
 ```bash
-overmind start
+foreman start
 ```
 
 ### Crear canción manualmente
@@ -73,7 +73,7 @@ rake db:migrate:redo
     - Se puede utilizar para `parrafo_pos` y para `locale`
 - [ ] Eliminar required del campo de texto del comentario para que cuando se desactive el javascript se puedan 
       ver los comentarios
-- [ ] Añadir el atributo alt a las imágenes
+- [x] Añadir el atributo alt a las imágenes
 - ...
 
 ## Accesibilidad
