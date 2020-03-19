@@ -10,7 +10,10 @@
         <%= f.submit t('acciones.buscar'), name: nil, class: 'btn btn-primary' %>
       <% end %>
 
-      <%= image_tag 'undraw_music_disc.svg', class: 'w-100 px-5 mt-5 no-drag-select' %>
+      <%= image_tag 'undraw_music_disc.svg',
+                    class: 'w-100 px-5 mt-5 no-drag-select',
+                    alt: ""
+      %>
     </div>
 
     <div class="mt-5 text-center">
@@ -22,9 +25,15 @@
               <a href="<%= cancion_url(cancion) %>" class="text-decoration-none">
                 <div class="m-3 p-4 bg-white shadow-sm rounded-lg cancion-popular">
                   <% if cancion.imagen.attached? %>
-                    <%= image_tag cancion.imagen, class: 'cancion-popular__imagen no-drag-select' %>
+                    <%= image_tag cancion.imagen,
+                                  class: 'cancion-popular__imagen no-drag-select',
+                                  alt: "Imagen de portada de #{cancion.titulo} de #{cancion.artista}"
+                    %>
                   <% else %>
-                    <%= image_tag 'music_note_disk_icon.png', class: 'cancion-popular__imagen-defecto no-drag-select' %>
+                    <%= image_tag 'music_note_disk_icon.png',
+                                  class: 'cancion-popular__imagen-defecto no-drag-select',
+                                  alt: ""
+                    %>
                   <% end %>
 
                   <div class="mt-3">

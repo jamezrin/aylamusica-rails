@@ -3,8 +3,7 @@
     <h1><%= t 'acciones.iniciar_sesion' %></h1>
     <p class="text-muted"><%= t 'nota_iniciar_sesion' %></p>
 
-    <%= image_tag 'undraw_login.svg', class: 'w-25 mt-2 mb-5' %>
-
+    <%= image_tag 'undraw_login.svg', class: 'w-25 mt-2 mb-5', alt: "" %>
 
     <%= form_with url: admin_url, local: true do |f| %>
       <div class="form-group row offset-3 col-6">

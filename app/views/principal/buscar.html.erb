@@ -18,7 +18,9 @@
                                   cancion.imagen :
                                   'music_note_disk_icon.png',
                               class: 'no-drag-select',
-                              style: 'max-height: 8rem;' %>
+                              style: 'max-height: 8rem;',
+                              alt: "Imagen de portada de #{cancion.titulo} de #{cancion.artista}"
+                %>
 
                 <div class="p-3">
                   <h2 class="h3 card-title"><%= cancion.titulo %></h2>
