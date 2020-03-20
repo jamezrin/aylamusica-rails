@@ -1,6 +1,10 @@
 class AnunciosController < ApplicationController
   before_action :auth_required, except: [:show]
 
+  def index
+    @anuncios = Anuncio.all
+  end
+
   def new
     @anuncio = Anuncio.new
     @ultima_posicion = Anuncio.maximum(:posicion) || -1
@@ -17,6 +21,10 @@ class AnunciosController < ApplicationController
   end
 
   def show
+    @anuncio = Anuncio.find_by_id! params[:id]
+  end
+
+  def link
     @anuncio = Anuncio.find_by_id! params[:id]
     @anuncio.visitas += 1
     @anuncio.save

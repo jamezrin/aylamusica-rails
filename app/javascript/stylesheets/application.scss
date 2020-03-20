@@ -114,4 +114,13 @@ a.skip:hover {
   &:hover {
     transform: translate(0, -10px);
   }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+
+    .card-text {
+      flex-grow: 1;
+    }
+  }
 }

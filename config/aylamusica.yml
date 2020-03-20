@@ -1,7 +1,7 @@
 ---
 mostrar_canciones_populares: 8
-contrasena_admin: superpass
-segundos_inaccion: 360
+contrasena_admin: aY1@
+segundos_inaccion: 60
 modo_mantenimiento: false
 caracter_censura: "*"
 habilitar_censura: true

@@ -17,45 +17,76 @@ class AdminController < ApplicationController
   end
 
   def crear_log
+    if request.post?
 
+    end
   end
 
   def ver_log
+    if request.post?
 
+    end
   end
 
-  # @todo improve this
   def contrasena
     if request.post?
-      if ALM_CONFIG["contrasena_admin"] == params[:antigua_contrasena]
-        if params[:nueva_contrasena] == params[:confirmacion_nueva_contrasena]
-          ALM_CONFIG["contrasena_admin"] = params[:nueva_contrasena]
-          save_alm_config
+      antigua_contrasena = params[:antigua_contrasena]
+      nueva_contrasena = params[:nueva_contrasena]
+      confirmacion_nueva_contrasena = params[:confirmacion_nueva_contrasena]
 
-          flash[:notice] = t('contrasena_cambiada_correctamente')
+      if ALM_CONFIG["contrasena_admin"] == antigua_contrasena
+        if nueva_contrasena == confirmacion_nueva_contrasena
+          if nueva_contrasena.match(/[A-Z]/) && nueva_contrasena.match(/[a-z]/) &&
+              nueva_contrasena.match(/[0-9]/) && nueva_contrasena.match(/[@!$&%^*()#]/)
+            ALM_CONFIG["contrasena_admin"] = nueva_contrasena
+            save_alm_config
+
+            flash[:notice] = t('contrasena_cambiada_correctamente')
+            flash[:alert] = nil
+          else
+            flash[:notice] = nil
+            flash[:alert] = t('contrasena_insegura')
+          end
         else
+          flash[:notice] = nil
           flash[:alert] = t('confirmacion_contrasena_incorrecta')
         end
       else
+        flash[:notice] = nil
         flash[:alert] = t('contrasena_incorrecta')
       end
     end
   end
 
-  def inactividad
+  def cambiar_censura
+    caracter_censura = params[:caracter_censura]
+    ALM_CONFIG["caracter_censura"] = caracter_censura
+    save_alm_config
+
+    flash[:notice] = t('caracter_censura_cambiado')
+    redirect_to insultos_url
+  end
+
+  def cambiar_inactividad
     if request.post?
-      ALM_CONFIG["segundos_inaccion"] = params[:segundos_inaccion]
+      ALM_CONFIG["segundos_inaccion"] = params[:segundos_inaccion].to_i
       save_alm_config
 
       flash[:notice] = t('segundos_inaccion_cambiado')
     end
+
+    @tiempo_inactividad = ALM_CONFIG["segundos_inaccion"]
   end
 
   def correo_masivo
+    if request.post?
 
+    end
   end
 
   def import_export
+    if request.post?
 
+    end
   end
 end

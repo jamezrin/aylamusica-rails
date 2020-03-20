@@ -1,2 +1,78 @@
 ---
 si:
+  acciones:
+    buscar: Buscar
+    cerrar: Cerrar
+    crear_comentario: Enviar comentario
+    ver_comentarios: Ver comentarios
+    ir: Ir
+    activar: Activar
+    desactivar: Desactivar
+    enviar: Enviar
+    cerrar_sesion: Cerrar sesión
+    iniciar_sesion: Iniciar sesión
+    crear: Crear
+    nuevo: Nuevo
+    gestionar: Gestionar
+    cambiar: Cambiar
+  secciones:
+    mantenimiento: Mantenimiento
+    mantenimiento_sub: Cambia el estado del modo de mantenimiento.
+    archivo_log: Archivo de log
+    archivo_log_sub: (NO FUNCIONAL) Genera y visualiza el archivo de log conteniendo los comentarios.
+    administracion: Administración
+    administracion_sub: Administración
+    insultos: Insultos
+    insultos_sub: Añade insultos desde esta interfaz. También puedes cambiar el carácter de censura.
+    anuncios: Anuncios
+    anuncios_sub: Crea y modifica los anuncios guardados en la base de datos.
+    import_export: Importar/Exportar
+    import_export_sub: (NO FUNCIONAL) Importa y exporta las canciones guardadas en la base de datos.
+    canciones: Canciones
+    canciones_sub: Crea una canción desde esta interfaz.
+    todas_las_canciones: Todas las canciones
+    todas_las_canciones_sub: Todas las canciones
+    contrasena_admin: Contraseña Admin
+    contrasena_admin_sub: Cambia la contraseña del administrador.
+    correo_masivo: Correo Masivo
+    correo_masivo_sub: (NO FUNCIONAL) Envía un correo a todos los publicitantes.
+    inactividad: Inactividad
+    inactividad_sub: Cambiar el tiempo que se tiene que estar inactivo para ser expulsado.
+  respuestas:
+    mantenimiento_activado: El modo de mantenimiento ha sido activado correctamente
+    mantenimiento_desactivado: El modo de mantenimiento ha sido desactivado correctamente
+    anuncio_creado: Anuncio creado correctamente
+    comentario_creado: Comentario enviado correctamente
+    insulto_creado: Insulto creado correctamente
+    sesion_cerrada: Se ha cerrado tu sesión correctamente
+    sesion_expirada: Tu sesión ha expirado, vuelve a iniciar sesión
+  buscar_todas: Pustite to polje prazno, da si ogledate vse
+  contrasena_incorrecta: La contraseña que has introducido no es correcta
+  ningun_comentario: De momento nadie ha comentado en este párrafo. ¡Sé el primero en hacerlo!
+  ningun_resultado_cancion: Ningún resultado
+  ninguna_cancion: No se han encontrado canciones en nuestra base de datos
+  ninguna_seleccion: Haz click en un párrafo para ver los comentarios
+  nota_iniciar_sesion: Todas sus acciones serán registradas y monitorizadas
+  resultados_busqueda: Resultados de tu búsqueda "%{busqueda}"
+  saltar_al_contenido: Saltar al contenido
+  titulo_buscar_cancion: Najdite pesem enostavno
+  titulo_canciones_populares: Las canciones mas populares
+  titulo_comentarios: Comentarios
+  titulo_crear_comentario: Dí algo
+  titulo_crear_cancion: Nueva canción
+  titulo_crear_anuncio: Nuevo anuncio
+  titulo_crear_insulto: Nuevo insulto
+  titulo_gestionar_anuncios: Gestionar anuncios
+  titulo_cambiar_contrasena: Cambiar contraseña
+  titulo_gestionar_insultos: Gestionar insultos
+  titulo_cambiar_censura: Cambiar censura
+  titulo_cambiar_inactividad: Cambiar tiempo de inactividad
+  visitas_cancion: "%{visitas} visitas"
+  enviar_correo: Enviar correo
+  titulo_ver_log: Ver log
+  contrasena_cambiada_correctamente: Contraseña cambiada correctamente
+  confirmacion_contrasena_incorrecta: Las nuevas contraseñas son diferentes
+  error_no_implementado: Esta funcionalidad no ha sido implementada
+  contrasena_insegura: La contraseña introducida no es lo suficientemente segura
+  caracter_censura_cambiado: El carácter de censura ha sido cambiado correctamente
+  segundos_inaccion_cambiado: El tiempo de inactividad ha sido cambiado correctamente

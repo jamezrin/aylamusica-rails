@@ -53,11 +53,16 @@ class CancionesController < ApplicationController
     end
   end
 
+  def enviar_correo
+    @cancion = Cancion.find_by_id! params[:cancion_id]
+  end
+
   private
 
   def mapear_comentario(comentario)
     {
-        texto: Rack::Utils::escape_html(comentario.texto),
+        texto: Rack::Utils::escape_html(
+            censurar_comentario(comentario.texto)),
         created_at: comentario.created_at
     }
   end
@@ -88,6 +93,7 @@ class CancionesController < ApplicationController
 
   def censurar_comentario(texto)
     return texto unless ALM_CONFIG["habilitar_censura"]
+
     caracter_censura = ALM_CONFIG["caracter_censura"]
 
     insultos = Insulto.where("LOWER(:texto) LIKE CONCAT('%', LOWER(insulto), '%')",

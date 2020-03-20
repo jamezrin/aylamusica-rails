@@ -1,7 +1,7 @@
 class InsultosController < ApplicationController
   before_action :auth_required
 
-  def new
+  def index
     @insulto = Insulto.new
   end
 

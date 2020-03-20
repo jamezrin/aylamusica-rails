@@ -1,0 +1,33 @@
+<div class="bg-light-dark min-vh-100">
+  <div class="container pt-5" id="gestionar-insultos">
+    <h1><%= t('titulo_gestionar_insultos') %></h1>
+
+    <%= render 'partials/alerts' %>
+
+    <section id="crear-insulto" class="pt-3 pl-2">
+      <h2><%= t('titulo_crear_insulto') %></h2>
+
+      <%= form_with model: @insulto, local: true do |f| %>
+        <p class="form-group form-inline">
+          <%= f.label :insulto %><br>
+          <%= f.text_field :insulto, class: 'form-control ml-4' %>
+        </p>
+
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </section>
+
+    <section id="cambiar-censura" class="pt-5">
+      <h2><%= t('titulo_cambiar_censura') %></h2>
+
+      <%= form_with url: admin_cambiar_censura_url, local: true do |f| %>
+        <p class="form-group form-inline">
+          <%= f.label :caracter_censura %><br>
+          <%= f.text_field :caracter_censura, class: 'form-control ml-4' %>
+        </p>
+
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </section>
+  </div>
+</div>

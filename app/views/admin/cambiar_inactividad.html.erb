@@ -1,0 +1,16 @@
+<div class="bg-light-dark min-vh-100">
+  <div class="container pt-5" id="cambiar-inactividad">
+    <h1><%= t('titulo_cambiar_inactividad') %></h1>
+
+    <%= render 'partials/alerts' %>
+
+    <%= form_with url: admin_cambiar_inactividad_url, local: true, method: :post do |f| %>
+      <p class="form-group form-inline">
+        <%= f.label :segundos_inaccion %><br>
+        <%= f.number_field :segundos_inaccion, class: 'form-control ml-4', value: @tiempo_inactividad, required: true %>
+      </p>
+
+      <%= f.submit t('acciones.cambiar'), name: nil, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
