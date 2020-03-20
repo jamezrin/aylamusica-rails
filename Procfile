@@ -1,2 +1,2 @@
-web: rails server -p 3000 -b 0.0.0.0
+web: rails server -p ${PORT:-3000} -e ${RACK_ENV:-development}
 webpacker: ./bin/webpack-dev-server
