@@ -7,6 +7,8 @@ ruby '2.6.3'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Use mysql2 as the database for Active Record
 gem 'mysql2', '>= 0.4.4'
+# Use postgres for the alternative database for Active Record
+gem "pg", "~> 1.2"
 # Use Puma as the app server
 gem "puma", ">= 4.3.3"
 # Use SCSS for stylesheets
@@ -54,3 +56,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
