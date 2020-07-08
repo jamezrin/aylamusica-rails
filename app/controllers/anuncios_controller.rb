@@ -25,7 +25,7 @@ class AnunciosController < ApplicationController
   end
 
   def link
-    @anuncio = Anuncio.find_by_id! params[:id]
+    @anuncio = Anuncio.find_by_id! params[:anuncio_id]
     @anuncio.visitas += 1
     @anuncio.save
 
