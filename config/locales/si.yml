@@ -1,7 +1,7 @@
 ---
 si:
   acciones:
-    buscar: Buscar
+    buscar: Išči
     cerrar: Cerrar
     crear_comentario: Enviar comentario
     ver_comentarios: Ver comentarios
@@ -50,13 +50,13 @@ si:
   contrasena_incorrecta: La contraseña que has introducido no es correcta
   ningun_comentario: De momento nadie ha comentado en este párrafo. ¡Sé el primero en hacerlo!
   ningun_resultado_cancion: Ningún resultado
-  ninguna_cancion: No se han encontrado canciones en nuestra base de datos
+  ninguna_cancion: V naši podatkovni bazi ni skladb
   ninguna_seleccion: Haz click en un párrafo para ver los comentarios
   nota_iniciar_sesion: Todas sus acciones serán registradas y monitorizadas
   resultados_busqueda: Resultados de tu búsqueda "%{busqueda}"
   saltar_al_contenido: Saltar al contenido
   titulo_buscar_cancion: Najdite pesem enostavno
-  titulo_canciones_populares: Las canciones mas populares
+  titulo_canciones_populares: Najbolj priljubljene pesmi
   titulo_comentarios: Comentarios
   titulo_crear_comentario: Dí algo
   titulo_crear_cancion: Nueva canción
@@ -67,7 +67,7 @@ si:
   titulo_gestionar_insultos: Gestionar insultos
   titulo_cambiar_censura: Cambiar censura
   titulo_cambiar_inactividad: Cambiar tiempo de inactividad
-  visitas_cancion: "%{visitas} visitas"
+  visitas_cancion: '%{visitas} visitas'
   enviar_correo: Enviar correo
   titulo_ver_log: Ver log
   contrasena_cambiada_correctamente: Contraseña cambiada correctamente

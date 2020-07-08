@@ -56,7 +56,7 @@ en:
   resultados_busqueda: Resultados de tu búsqueda "%{busqueda}"
   saltar_al_contenido: Saltar al contenido
   titulo_buscar_cancion: Busca una canción fácilmente
-  titulo_canciones_populares: Las canciones mas populares
+  titulo_canciones_populares: Las canciones más populares
   titulo_comentarios: Comentarios
   titulo_crear_comentario: Dí algo
   titulo_crear_cancion: Nueva canción
@@ -67,7 +67,7 @@ en:
   titulo_gestionar_insultos: Gestionar insultos
   titulo_cambiar_censura: Cambiar censura
   titulo_cambiar_inactividad: Cambiar tiempo de inactividad
-  visitas_cancion: "%{visitas} visitas"
+  visitas_cancion: '%{visitas} visitas'
   enviar_correo: Enviar correo
   titulo_ver_log: Ver log
   contrasena_cambiada_correctamente: Contraseña cambiada correctamente
