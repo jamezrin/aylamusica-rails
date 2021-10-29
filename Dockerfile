@@ -2,7 +2,7 @@ FROM ruby:2.7.4
 
 RUN curl -fsSL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    python build-essential libpq-dev libmariadb-dev sqlite3 libsqlite3-dev nodejs
+    python python3 build-essential libpq-dev libmariadb-dev sqlite3 libsqlite3-dev nodejs
 RUN npm install -g yarn
 
 ENV RAILS_ENV production
