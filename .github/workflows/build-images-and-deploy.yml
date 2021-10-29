@@ -42,7 +42,7 @@ jobs:
         id: compute_vars
         run: |
           version="$GITHUB_RUN_NUMBER"
-          image_name="${{ env.REGISTRY }}/aylamusica/aylamusica"
+          image_name="${{ env.REGISTRY }}/aylamusica/aylamusica-rails"
           full_image_tag="${image_name}:${version}-${{ matrix.platform }}"
           echo "::set-output name=full_image_tag::${full_image_tag}"
       - name: Build and push
@@ -67,7 +67,7 @@ jobs:
       - name: Build manifests
         run: |
           version="$GITHUB_RUN_NUMBER"
-          image_name="${{ env.REGISTRY }}/aylamusica/aylamusica"
+          image_name="${{ env.REGISTRY }}/aylamusica/aylamusica-rails"
           
           echo "Creating manifest for ${version} tag"
           docker manifest create ${image_name}:${version} \
