@@ -17,5 +17,8 @@ COPY . .
 # RUN npm rebuild node-sass
 RUN SECRET_KEY_BASE="assets_compile" bundle exec rails assets:precompile
 
+# hack to mount the config (writeable) as a volume
+RUN mkdir -p /state && ln -s /usr/bin/app/config/aylamusica.yml /state/
+
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
