@@ -10,6 +10,8 @@ concurrency:
 
 env:
   REGISTRY: harbor.jamezrin.name
+  IMAGE_PROJECT: aylamusica
+  IMAGE_NAME: aylamusica-rails
 
 jobs:
   build-packages:
@@ -67,7 +69,7 @@ jobs:
       - name: Build manifests
         run: |
           version="$GITHUB_RUN_NUMBER"
-          image_name="${{ env.REGISTRY }}/aylamusica/aylamusica-rails"
+          image_name="${{ env.REGISTRY }}/${{ env.IMAGE_PROJECT }}/${{ env.IMAGE_NAME }}"
           
           echo "Creating manifest for ${version} tag"
           docker manifest create ${image_name}:${version} \
