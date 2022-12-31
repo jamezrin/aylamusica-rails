@@ -44,7 +44,7 @@ jobs:
         id: compute_vars
         run: |
           version="$GITHUB_RUN_NUMBER"
-          image_name="${{ env.REGISTRY }}/aylamusica/aylamusica-rails"
+          image_name="${{ env.REGISTRY }}/${{ env.IMAGE_PROJECT }}/${{ env.IMAGE_NAME }}"
           full_image_tag="${image_name}:${version}-${{ matrix.platform }}"
           echo "::set-output name=full_image_tag::${full_image_tag}"
       - name: Build and push
