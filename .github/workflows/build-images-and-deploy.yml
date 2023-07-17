@@ -70,12 +70,12 @@ jobs:
         run: |
           version="$GITHUB_RUN_NUMBER"
           image_name="${{ env.REGISTRY }}/${{ env.IMAGE_PROJECT }}/${{ env.IMAGE_NAME }}"
-          
+
           echo "Creating manifest for ${version} tag"
           docker buildx imagetools create -t ${image_name}:${version} \
             ${image_name}:${version}-amd64 \
             ${image_name}:${version}-arm64
 
           echo "Re-tagging latest"
-          docker tag ${image_name}:${version} ${image_name}:latest
-          docker push ${image_name}:latest
+          docker buildx imagetools create -t ${image_name}:latest \
+            ${image_name}:${version}
