@@ -10,7 +10,7 @@ concurrency:
 
 env:
   REGISTRY: harbor.jamezrin.name
-  IMAGE_PROJECT: aylamusica
+  IMAGE_PROJECT: library
   IMAGE_NAME: aylamusica-rails
 
 jobs:
