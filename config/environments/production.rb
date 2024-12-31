@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.hosts << "aylamusica.jamezrin.name"
+  config.hosts << "aylamusica.jamezrin.com"
 
   # Code is not reloaded between requests.
   config.cache_classes = true
