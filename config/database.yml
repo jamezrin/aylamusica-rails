@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: aylamusica_rails_production
+  database: <%= ENV['DATABASE_NAME'] %>
   adapter: postgresql
   host: <%= ENV['DATABASE_HOST'] %>
   username: <%= ENV['DATABASE_USERNAME'] %>
